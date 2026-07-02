@@ -235,4 +235,284 @@ const SEED = [
 ];
 
 const TIERS = {1:"Tier 1 · Frontier labs",2:"Tier 2 · AI-native application leaders",3:"Tier 3 · Data & AI infrastructure",4:"Tier 4 · Established platforms",5:"Tier 5 · Defense & physical AI"};
-const TCOLOR = {1:"var(--t1)",2:"var(--t2)",3:"var(--t3
+const TCOLOR = {1:"var(--t1)",2:"var(--t2)",3:"var(--t3)",4:"var(--t4)",5:"var(--t5)"};
+const CO_STATUS = ["Not started","Researching","Outreach live","Interviewing","Paused"];
+const CO_BADGE = {"Not started":"b-not","Researching":"b-res","Outreach live":"b-out","Interviewing":"b-int","Paused":"b-pau"};
+const P_STATUS = ["Identified","Requested","Connected","In conversation","Meeting booked","Went cold"];
+const PERSONAS = ["HM","AE","RC"];
+const PERSONA_LABEL = {HM:"Hiring manager",AE:"Enterprise AE",RC:"GTM recruiter"};
+
+/* ============ state ============ */
+const KEY = "buyersChair.v1";
+let state = load();
+state.dismissed = state.dismissed || [];
+let inbox = [];
+let filter = "all";
+
+function load(){
+  try{
+    const raw = localStorage.getItem(KEY);
+    if(raw) return JSON.parse(raw);
+  }catch(e){}
+  return {companies: SEED.map(([name,tier,note,vertical],i)=>({
+    id:"c"+i, name, tier, note, vertical,
+    status:"Not started", people:[], roles:[], notes:""
+  }))};
+}
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){ toast("Could not save — storage unavailable"); } }
+function toast(msg){ const t=document.getElementById("toast"); t.textContent=msg; t.classList.add("show"); setTimeout(()=>t.classList.remove("show"),2200); }
+
+/* ============ linkedin search links ============ */
+function liSearch(company, phrase){
+  return "https://www.linkedin.com/search/results/people/?keywords=" + encodeURIComponent('"'+company+'" '+phrase);
+}
+function liPerson(name, company){
+  return "https://www.linkedin.com/search/results/people/?keywords=" + encodeURIComponent('"'+name+'" '+(company||"").split("(")[0].trim());
+}
+function liJobs(company){
+  return "https://www.linkedin.com/jobs/search/?keywords=" + encodeURIComponent(company + " account executive");
+}
+function searchSet(c){
+  const short = c.name.split("(")[0].trim();
+  const sets = [
+    ["VP / Head of Sales", '("VP Sales" OR "Head of Sales" OR "CRO")'],
+    ["Enterprise AE", '"enterprise account executive"'],
+    ["GTM recruiter", '(recruiter AND (GTM OR sales))'],
+  ];
+  if(c.vertical==="financial services") sets.push(["FinServ AE", '"account executive" "financial services"']);
+  if(c.vertical==="talent") sets.push(["Talent GTM", '"go to market" talent']);
+  return sets.map(([label,phrase])=>
+    `<a class="sl" target="_blank" rel="noopener" href="${liSearch(short,phrase)}">${label} ${ext()}</a>`
+  ).join("") + `<a class="sl" target="_blank" rel="noopener" href="${liJobs(short)}">Open AE roles ${ext()}</a>`;
+}
+function ext(){return `<svg viewBox="0 0 12 12" fill="none"><path d="M3 9L9 3M9 3H4M9 3V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>`;}
+
+/* ============ derived ============ */
+function coverage(c){
+  const out = {};
+  for(const p of PERSONAS){
+    const matches = c.people.filter(x=>x.persona===p);
+    if(!matches.length){ out[p]="none"; continue; }
+    out[p] = matches.some(x=>["In conversation","Meeting booked"].includes(x.status)) ? "hot" : "filled";
+  }
+  return out;
+}
+function dueCount(c){
+  const today = new Date().toISOString().slice(0,10);
+  return c.people.filter(p=>p.next && p.next<=today && p.status!=="Went cold").length;
+}
+
+/* ============ render ============ */
+function setFilter(el){
+  document.querySelectorAll(".chip").forEach(x=>x.classList.remove("on"));
+  el.classList.add("on");
+  filter = el.dataset.f;
+  render();
+}
+const openSet = new Set();
+
+function render(){
+  const q = document.getElementById("q").value.toLowerCase();
+  // stats
+  const cos = state.companies;
+  const totPeople = cos.reduce((n,c)=>n+c.people.length,0);
+  const convos = cos.reduce((n,c)=>n+c.people.filter(p=>["In conversation","Meeting booked"].includes(p.status)).length,0);
+  const due = cos.reduce((n,c)=>n+dueCount(c),0);
+  const active = cos.filter(c=>c.status!=="Not started"&&c.status!=="Paused").length;
+  const interviewing = cos.filter(c=>c.status==="Interviewing").length;
+  document.getElementById("stats").innerHTML = `
+    <div class="stat"><div class="n">${active}<span style="font-size:15px;color:var(--ink-3)">/50</span></div><div class="l">Companies active</div></div>
+    <div class="stat"><div class="n">${totPeople}</div><div class="l">People tracked</div></div>
+    <div class="stat good"><div class="n">${convos}</div><div class="l">Live conversations</div></div>
+    <div class="stat ${due?'alert':''}"><div class="n">${due}</div><div class="l">Follow-ups due</div></div>
+    <div class="stat good"><div class="n">${interviewing}</div><div class="l">Interviewing</div></div>`;
+
+  // list
+  let html = inboxSection();
+  for(const t of [1,2,3,4,5]){
+    const group = cos.filter(c=>{
+      if(filter==="active" && (c.status==="Not started"||c.status==="Paused")) return false;
+      if(filter!=="all" && filter!=="active" && c.tier!==+filter) return false;
+      if(c.tier!==t) return false;
+      if(q){
+        const hay = (c.name+" "+c.note+" "+c.people.map(p=>p.name+" "+p.title).join(" ")).toLowerCase();
+        if(!hay.includes(q)) return false;
+      }
+      return true;
+    });
+    if(!group.length) continue;
+    html += `<div class="tier-head">${TIERS[t]}</div>`;
+    for(const c of group) html += coCard(c);
+  }
+  document.getElementById("list").innerHTML = html || `<div class="empty" style="padding:30px 0">Nothing matches. Clear the search or switch tiers.</div>`;
+}
+
+function coCard(c){
+  const cov = coverage(c);
+  const due = dueCount(c);
+  const open = openSet.has(c.id);
+  return `<div class="co ${open?'open':''}" id="${c.id}">
+    <div class="co-row" onclick="toggle('${c.id}')">
+      <div class="tbar" style="background:${TCOLOR[c.tier]}"></div>
+      <div>
+        <div class="co-name">${c.name}</div>
+        <div class="co-note">${c.note}</div>
+      </div>
+      <div class="cov" title="Persona coverage: HM / AE / RC">
+        ${PERSONAS.map(p=>`<div class="cell ${cov[p]==='none'?'':cov[p]}">${p}</div>`).join("")}
+      </div>
+      <div class="pcount">${due?`<span class="due-dot" title="follow-up due"></span>`:""}${c.people.length} ppl</div>
+      <span class="badge ${CO_BADGE[c.status]}">${c.status}</span>
+      <div style="width:6px"></div>
+    </div>
+    <div class="co-body">
+      <div class="co-status-line">
+        <label style="font-family:var(--mono);font-size:11px;color:var(--ink-2)">STATUS</label>
+        <select onchange="setCoStatus('${c.id}',this.value)">
+          ${CO_STATUS.map(s=>`<option ${s===c.status?"selected":""}>${s}</option>`).join("")}
+        </select>
+      </div>
+      <h4>Find people — one-click LinkedIn searches</h4>
+      <div class="searchlinks">${searchSet(c)}</div>
+      <h4>People (${c.people.length})</h4>
+      ${peopleTable(c)}
+      <div class="addline">
+        <input id="pn-${c.id}" placeholder="Name">
+        <input id="pt-${c.id}" placeholder="Title">
+        <input id="pu-${c.id}" placeholder="LinkedIn URL (optional)">
+        <select id="pp-${c.id}">${PERSONAS.map(p=>`<option value="${p}">${PERSONA_LABEL[p]}</option>`).join("")}</select>
+        <button class="btn" onclick="addPerson('${c.id}')">Add person</button>
+      </div>
+      <h4>Company notes</h4>
+      <textarea class="notesbox" placeholder="Warm intros, product angle, comp intel, why-them narrative…" onchange="setNotes('${c.id}',this.value)">${esc(c.notes)}</textarea>
+    </div>
+  </div>`;
+}
+
+function peopleTable(c){
+  if(!c.people.length) return `<div class="empty">No one tracked yet. Use the searches above, then add your targets here.</div>`;
+  return `<table><thead><tr><th>Name</th><th>Title</th><th>Persona</th><th>Status</th><th>Next follow-up</th><th></th></tr></thead><tbody>
+  ${c.people.map((p,i)=>`<tr>
+    <td><a class="linkA" target="_blank" rel="noopener" href="${p.url?esc(p.url):liPerson(p.name,c.name)}">${esc(p.name)}</a></td>
+    <td>${esc(p.title)}</td>
+    <td style="font-family:var(--mono);font-size:12px">${p.persona}</td>
+    <td><select onchange="setPStatus('${c.id}',${i},this.value)">${P_STATUS.map(s=>`<option ${s===p.status?"selected":""}>${s}</option>`).join("")}</select></td>
+    <td><input type="date" value="${p.next||""}" onchange="setPNext('${c.id}',${i},this.value)"></td>
+    <td><button class="mini" onclick="delPerson('${c.id}',${i})" title="Remove">✕</button></td>
+  </tr>`).join("")}
+  </tbody></table>`;
+}
+
+function esc(s){return (s||"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));}
+
+/* ============ actions ============ */
+function findCo(id){return state.companies.find(c=>c.id===id);}
+function toggle(id){ openSet.has(id)?openSet.delete(id):openSet.add(id); render(); }
+function setCoStatus(id,v){ findCo(id).status=v; save(); render(); }
+function setNotes(id,v){ findCo(id).notes=v; save(); }
+function addPerson(id){
+  const n=document.getElementById("pn-"+id).value.trim();
+  if(!n){ toast("Name required"); return; }
+  const c=findCo(id);
+  c.people.push({
+    name:n,
+    title:document.getElementById("pt-"+id).value.trim(),
+    url:document.getElementById("pu-"+id).value.trim(),
+    persona:document.getElementById("pp-"+id).value,
+    status:"Identified", next:""
+  });
+  if(c.status==="Not started") c.status="Researching";
+  save(); render(); toast("Added "+n);
+}
+function delPerson(id,i){ findCo(id).people.splice(i,1); save(); render(); }
+function setPStatus(id,i,v){ findCo(id).people[i].status=v; save(); render(); }
+function setPNext(id,i,v){ findCo(id).people[i].next=v; save(); render(); }
+
+function expandDue(){
+  openSet.clear();
+  let n=0;
+  for(const c of state.companies) if(dueCount(c)){ openSet.add(c.id); n++; }
+  if(!n){ toast("No follow-ups due. Pipeline is clean."); }
+  render();
+  if(n){ toast(n+" compan"+(n>1?"ies":"y")+" with follow-ups due"); }
+}
+
+/* ============ agent inbox ============ */
+function visibleInbox(){
+  const tracked = new Set();
+  for(const c of state.companies) for(const p of c.people) if(p.agentId) tracked.add(p.agentId);
+  return inbox.filter(p=>!state.dismissed.includes(p.id) && !tracked.has(p.id));
+}
+function inboxSection(){
+  const items = visibleInbox();
+  if(!items.length) return "";
+  return `<div class="inbox">
+    <div class="inbox-head">
+      <h3>Agent inbox — ${items.length} to review</h3>
+      <span class="meta">Found via Apollo, scored by Claude. Approve to add to a company's pipeline; dismiss to hide forever.</span>
+    </div>
+    ${items.slice(0,40).map(p=>`<div class="pr">
+      <div class="sc ${p.score>=5?'s5':''}">${p.score}</div>
+      <div>
+        <div class="who"><a class="linkA" target="_blank" rel="noopener" href="${p.linkedin_url?esc(p.linkedin_url):liPerson(p.name,p.company)}">${esc(p.name)}</a><span class="pp">${p.persona}</span></div>
+        <div class="co-of">${esc(p.title)} · ${esc(p.company)}${p.location?" · "+esc(p.location):""}</div>
+        ${p.why?`<div class="why">${esc(p.why)}</div>`:""}
+        ${p.warm_angle?`<div class="warm">Warm angle: ${esc(p.warm_angle)}</div>`:""}
+      </div>
+      <div class="acts">
+        <button class="btn primary" onclick="approveP('${p.id}')">Approve</button>
+        <button class="btn ghost" onclick="dismissP('${p.id}')">Dismiss</button>
+      </div>
+    </div>`).join("")}
+    ${items.length>40?`<div class="empty">Showing top 40 by score. Approve or dismiss to see more.</div>`:""}
+  </div>`;
+}
+function loadInbox(){
+  fetch("prospects.json",{cache:"no-store"})
+    .then(r=>{ if(!r.ok) throw new Error(); return r.json(); })
+    .then(d=>{ inbox=d.prospects||[]; render();
+      const n=visibleInbox().length;
+      toast(n?n+" prospects to review":"Inbox is clear"); })
+    .catch(()=>{ toast("No prospects.json here — pick the file manually");
+      document.getElementById("inboxFile").click(); });
+}
+function loadInboxFile(ev){
+  const f=ev.target.files[0]; if(!f) return;
+  const r=new FileReader();
+  r.onload=()=>{ try{ const d=JSON.parse(r.result); inbox=d.prospects||[]; render();
+      toast(visibleInbox().length+" prospects to review"); }
+    catch(e){ toast("Invalid prospects file"); } };
+  r.readAsText(f);
+}
+function approveP(id){
+  const p=inbox.find(x=>x.id===id); if(!p) return;
+  const c=state.companies.find(c=>c.name===p.company);
+  if(!c){ toast("Company not found: "+p.company); return; }
+  c.people.push({name:p.name,title:p.title,url:p.linkedin_url,persona:p.persona,status:"Identified",next:"",agentId:p.id});
+  if(c.status==="Not started") c.status="Researching";
+  save(); render(); toast("Added "+p.name+" to "+c.name);
+}
+function dismissP(id){
+  state.dismissed.push(id);
+  save(); render();
+}
+
+function exportJSON(){
+  const blob = new Blob([JSON.stringify(state,null,2)],{type:"application/json"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "buyers-chair-backup-"+new Date().toISOString().slice(0,10)+".json";
+  a.click();
+  toast("Backup exported");
+}
+function importJSON(ev){
+  const f = ev.target.files[0]; if(!f) return;
+  const r = new FileReader();
+  r.onload = ()=>{ try{ state = JSON.parse(r.result); state.dismissed = state.dismissed || []; save(); render(); toast("Backup restored"); }catch(e){ toast("Invalid backup file"); } };
+  r.readAsText(f);
+}
+
+render();
+</script>
+</body>
+</html>
