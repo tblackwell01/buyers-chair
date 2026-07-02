@@ -1,0 +1,36 @@
+name: Weekly prospect run
+
+on:
+  schedule:
+    - cron: "0 11 * * 1"   # Mondays 11:00 UTC = 6:00 AM Chicago (CDT)
+  workflow_dispatch: {}      # manual "Run workflow" button for testing
+
+permissions:
+  contents: write
+
+jobs:
+  prospect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run prospect agent
+        env:
+          APOLLO_API_KEY: ${{ secrets.APOLLO_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python prospect_agent.py
+
+      - name: Commit results
+        run: |
+          git config user.name "prospect-agent"
+          git config user.email "actions@github.com"
+          git add prospects.json state.json
+          git diff --cached --quiet || git commit -m "Prospect run $(date -u +%F)"
+          git push
