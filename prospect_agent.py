@@ -18,14 +18,14 @@ import json
 import os
 import sys
 import time
-from datetime import date, datetime
+from datetime import date, datetime, timezone
 
 import requests
 
 APOLLO_KEY = os.environ.get("APOLLO_API_KEY")
 ANTHROPIC_KEY = os.environ.get("ANTHROPIC_API_KEY")
 
-APOLLO_URL = "https://api.apollo.io/api/v1/mixed_people/search"
+APOLLO_URL = "https://api.apollo.io/api/v1/mixed_people/api_search"
 ANTHROPIC_URL = "https://api.anthropic.com/v1/messages"
 CLAUDE_MODEL = "claude-sonnet-4-6"
 
@@ -90,7 +90,8 @@ def apollo_search(domain, titles, per_page):
     if resp.status_code != 200:
         print(f"  Apollo error {resp.status_code} for {domain}: {resp.text[:200]}")
         return []
-    people = resp.json().get("people", [])
+    data = resp.json()
+    people = (data.get("people") or []) + (data.get("contacts") or [])
     out = []
     for p in people:
         name = p.get("name") or f"{p.get('first_name','')} {p.get('last_name','')}".strip()
@@ -239,7 +240,7 @@ def main():
 
     with open(OUTPUT_PATH, "w") as f:
         json.dump({
-            "generated": datetime.utcnow().isoformat(timespec="seconds") + "Z",
+            "generated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "prospects": merged,
         }, f, indent=1)
 
