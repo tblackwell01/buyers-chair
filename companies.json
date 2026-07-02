@@ -1,0 +1,79 @@
+{
+  "companies": [
+    {"name": "Anthropic", "domain": "anthropic.com", "tier": 1, "vertical": "financial services"},
+    {"name": "OpenAI", "domain": "openai.com", "tier": 1, "vertical": ""},
+    {"name": "Google (DeepMind / Cloud AI)", "domain": "google.com", "tier": 1, "vertical": ""},
+    {"name": "xAI / SpaceX", "domain": "x.ai", "tier": 1, "vertical": ""},
+    {"name": "Microsoft", "domain": "microsoft.com", "tier": 1, "vertical": ""},
+    {"name": "Meta", "domain": "meta.com", "tier": 1, "vertical": ""},
+    {"name": "Mistral AI", "domain": "mistral.ai", "tier": 1, "vertical": ""},
+
+    {"name": "Cursor (Anysphere)", "domain": "cursor.com", "tier": 2, "vertical": ""},
+    {"name": "Sierra", "domain": "sierra.ai", "tier": 2, "vertical": ""},
+    {"name": "ElevenLabs", "domain": "elevenlabs.io", "tier": 2, "vertical": ""},
+    {"name": "Glean", "domain": "glean.com", "tier": 2, "vertical": ""},
+    {"name": "Harvey", "domain": "harvey.ai", "tier": 2, "vertical": "legal"},
+    {"name": "Cognition", "domain": "cognition.ai", "tier": 2, "vertical": ""},
+    {"name": "Perplexity", "domain": "perplexity.ai", "tier": 2, "vertical": ""},
+    {"name": "Decagon", "domain": "decagon.ai", "tier": 2, "vertical": ""},
+    {"name": "Lovable", "domain": "lovable.dev", "tier": 2, "vertical": ""},
+    {"name": "Abridge", "domain": "abridge.com", "tier": 2, "vertical": "healthcare"},
+    {"name": "OpenEvidence", "domain": "openevidence.com", "tier": 2, "vertical": "healthcare"},
+    {"name": "Legora", "domain": "legora.com", "tier": 2, "vertical": "legal"},
+    {"name": "Writer", "domain": "writer.com", "tier": 2, "vertical": ""},
+    {"name": "EliseAI", "domain": "eliseai.com", "tier": 2, "vertical": ""},
+    {"name": "Hebbia", "domain": "hebbia.ai", "tier": 2, "vertical": "financial services"},
+    {"name": "Rogo", "domain": "rogo.ai", "tier": 2, "vertical": "financial services"},
+    {"name": "Mercor", "domain": "mercor.com", "tier": 2, "vertical": "talent"},
+    {"name": "Suno", "domain": "suno.com", "tier": 2, "vertical": ""},
+
+    {"name": "Databricks", "domain": "databricks.com", "tier": 3, "vertical": "financial services"},
+    {"name": "Snowflake", "domain": "snowflake.com", "tier": 3, "vertical": "financial services"},
+    {"name": "NVIDIA", "domain": "nvidia.com", "tier": 3, "vertical": ""},
+    {"name": "CoreWeave", "domain": "coreweave.com", "tier": 3, "vertical": ""},
+    {"name": "Scale AI", "domain": "scale.com", "tier": 3, "vertical": ""},
+    {"name": "Together AI", "domain": "together.ai", "tier": 3, "vertical": ""},
+    {"name": "Fireworks AI", "domain": "fireworks.ai", "tier": 3, "vertical": ""},
+    {"name": "Cerebras", "domain": "cerebras.net", "tier": 3, "vertical": ""},
+    {"name": "Weights & Biases", "domain": "wandb.ai", "tier": 3, "vertical": ""},
+    {"name": "Pinecone", "domain": "pinecone.io", "tier": 3, "vertical": ""},
+    {"name": "LangChain", "domain": "langchain.com", "tier": 3, "vertical": ""},
+
+    {"name": "Salesforce", "domain": "salesforce.com", "tier": 4, "vertical": ""},
+    {"name": "ServiceNow", "domain": "servicenow.com", "tier": 4, "vertical": ""},
+    {"name": "Palantir", "domain": "palantir.com", "tier": 4, "vertical": ""},
+    {"name": "Amazon (AWS)", "domain": "amazon.com", "tier": 4, "vertical": ""},
+    {"name": "CrowdStrike", "domain": "crowdstrike.com", "tier": 4, "vertical": ""},
+    {"name": "Datadog", "domain": "datadoghq.com", "tier": 4, "vertical": ""},
+    {"name": "HubSpot", "domain": "hubspot.com", "tier": 4, "vertical": ""},
+    {"name": "Notion", "domain": "notion.so", "tier": 4, "vertical": ""},
+    {"name": "Figma", "domain": "figma.com", "tier": 4, "vertical": ""},
+
+    {"name": "Anduril", "domain": "anduril.com", "tier": 5, "vertical": "defense"},
+    {"name": "Shield AI", "domain": "shield.ai", "tier": 5, "vertical": "defense"},
+    {"name": "Figure AI", "domain": "figure.ai", "tier": 5, "vertical": ""},
+    {"name": "Waymo", "domain": "waymo.com", "tier": 5, "vertical": ""},
+    {"name": "Applied Intuition", "domain": "appliedintuition.com", "tier": 5, "vertical": "defense"}
+  ],
+  "personas": {
+    "HM": {
+      "label": "Hiring manager",
+      "titles": ["VP Sales", "Head of Sales", "Chief Revenue Officer", "VP Revenue", "Head of Go To Market", "VP Go To Market", "Head of Enterprise Sales", "Director of Sales"],
+      "per_company": 5
+    },
+    "AE": {
+      "label": "Enterprise AE",
+      "titles": ["Enterprise Account Executive", "Strategic Account Executive", "Named Account Executive", "Senior Account Executive"],
+      "per_company": 5
+    },
+    "RC": {
+      "label": "GTM recruiter",
+      "titles": ["Sales Recruiter", "GTM Recruiter", "Go To Market Recruiter", "Talent Acquisition"],
+      "per_company": 3
+    }
+  },
+  "run_settings": {
+    "max_companies_per_run": 15,
+    "note": "Apollo credits are the constraint. The agent works through the list in tier order, rotating: each run picks up where the last one stopped (cursor stored in state.json). At 15 companies per weekly run, the full 50 refresh roughly every 3.5 weeks."
+  }
+}

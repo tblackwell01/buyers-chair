@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buyer's Chair — GTM Pipeline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bone:#F5F6F3; --card:#FFFFFF; --ink:#141E28; --ink-2:#4A5764; --ink-3:#8B97A3;
+  --line:#DDE2DC; --cobalt:#2447F0; --cobalt-soft:#E8ECFE;
+  --green:#0E8A5F; --green-soft:#E2F3EC;
+  --amber:#C97B1E; --amber-soft:#FBF0DE;
+  --red:#C0392B; --red-soft:#F9E6E3;
+  --t1:#141E28; --t2:#2447F0; --t3:#0E8A5F; --t4:#6B4FBB; --t5:#C97B1E;
+  --mono:'Spline Sans Mono',ui-monospace,monospace;
+  --disp:'Archivo',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto} *{transition:none!important;animation:none!important}}
+body{background:var(--bone);color:var(--ink);font-family:var(--disp);font-size:15px;line-height:1.45}
+button{font-family:inherit;cursor:pointer}
+input,select,textarea{font-family:inherit;font-size:14px}
+:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}
+
+/* ---------- header ---------- */
+header{padding:28px 32px 0;max-width:1240px;margin:0 auto}
+.masthead{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.masthead h1{font-variation-settings:'wdth' 118,'wght' 760;font-size:30px;letter-spacing:-.5px;line-height:1}
+.masthead h1 span{color:var(--cobalt)}
+.masthead .sub{font-family:var(--mono);font-size:12px;color:var(--ink-2);margin-top:7px;letter-spacing:.02em}
+.head-actions{display:flex;gap:8px}
+.btn{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;padding:8px 14px;font-size:13px;font-weight:600;transition:border-color .15s, background .15s}
+.btn:hover{border-color:var(--ink-3)}
+.btn.primary{background:var(--cobalt);border-color:var(--cobalt);color:#fff}
+.btn.primary:hover{background:#1c39c9}
+.btn.ghost{background:transparent}
+
+/* ---------- stat strip ---------- */
+.stats{max-width:1240px;margin:22px auto 0;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.stat .n{font-variation-settings:'wdth' 112,'wght' 740;font-size:28px;line-height:1}
+.stat .l{font-family:var(--mono);font-size:11px;color:var(--ink-2);margin-top:6px;text-transform:uppercase;letter-spacing:.06em}
+.stat.alert .n{color:var(--amber)}
+.stat.good .n{color:var(--green)}
+
+/* ---------- filter rail ---------- */
+.rail{max-width:1240px;margin:18px auto 0;padding:0 32px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 13px;font-size:13px;font-weight:600;color:var(--ink-2);transition:all .15s}
+.chip:hover{border-color:var(--ink-3)}
+.chip.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.rail input[type=search]{margin-left:auto;border:1px solid var(--line);border-radius:8px;padding:8px 12px;min-width:220px;background:var(--card)}
+
+/* ---------- company list ---------- */
+main{max-width:1240px;margin:16px auto 90px;padding:0 32px}
+.tier-head{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);margin:26px 0 8px;display:flex;align-items:center;gap:10px}
+.tier-head::after{content:'';flex:1;height:1px;background:var(--line)}
+.co{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:8px;overflow:hidden;transition:border-color .15s}
+.co:hover{border-color:var(--ink-3)}
+.co-row{display:grid;grid-template-columns:5px 1fr auto auto auto auto;gap:14px;align-items:center;padding:13px 16px 13px 0;cursor:pointer}
+.tbar{align-self:stretch;border-radius:12px 0 0 12px}
+.co-name{font-variation-settings:'wdth' 110,'wght' 680;font-size:16px}
+.co-note{font-size:12.5px;color:var(--ink-2);margin-top:2px}
+.badge{font-family:var(--mono);font-size:11px;padding:4px 9px;border-radius:6px;font-weight:600;white-space:nowrap}
+.b-not{background:var(--bone);color:var(--ink-3)}
+.b-res{background:var(--cobalt-soft);color:var(--cobalt)}
+.b-out{background:var(--amber-soft);color:var(--amber)}
+.b-int{background:var(--green-soft);color:var(--green)}
+.b-pau{background:var(--red-soft);color:var(--red)}
+
+/* signature: persona coverage cells */
+.cov{display:flex;gap:4px;align-items:center}
+.cov .cell{width:26px;height:26px;border-radius:7px;border:1.5px dashed var(--line);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:10px;font-weight:600;color:var(--ink-3)}
+.cov .cell.filled{border-style:solid;border-color:var(--green);background:var(--green-soft);color:var(--green)}
+.cov .cell.hot{border-color:var(--cobalt);background:var(--cobalt-soft);color:var(--cobalt)}
+.pcount{font-family:var(--mono);font-size:12px;color:var(--ink-2);min-width:60px;text-align:right}
+.due-dot{width:8px;height:8px;border-radius:50%;background:var(--amber);display:inline-block;margin-right:5px}
+
+/* expanded panel */
+.co-body{display:none;border-top:1px solid var(--line);padding:16px 20px 18px;background:#FBFCFA}
+.co.open .co-body{display:block}
+.co-body h4{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-2);margin:14px 0 8px}
+.co-body h4:first-child{margin-top:0}
+.searchlinks{display:flex;gap:8px;flex-wrap:wrap}
+.sl{border:1px solid var(--line);background:var(--card);border-radius:8px;padding:7px 12px;font-size:12.5px;font-weight:600;color:var(--cobalt);text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.sl:hover{border-color:var(--cobalt)}
+.sl svg{width:12px;height:12px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{font-family:var(--mono);font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3);text-align:left;padding:6px 10px;border-bottom:1px solid var(--line)}
+td{padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:middle}
+tr:last-child td{border-bottom:none}
+td select{border:1px solid var(--line);border-radius:6px;padding:4px 6px;font-size:12px;background:var(--card)}
+td input[type=date]{border:1px solid var(--line);border-radius:6px;padding:3px 6px;font-size:12px;background:var(--card)}
+.mini{border:none;background:none;color:var(--ink-3);font-size:12px;font-weight:600;padding:4px}
+.mini:hover{color:var(--red)}
+.linkA{color:var(--cobalt);text-decoration:none;font-weight:600}
+.linkA:hover{text-decoration:underline}
+.addline{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.addline input,.addline select{border:1px solid var(--line);border-radius:8px;padding:7px 10px;background:var(--card)}
+.addline input{flex:1;min-width:120px}
+.notesbox{width:100%;border:1px solid var(--line);border-radius:8px;padding:9px 11px;min-height:56px;resize:vertical;background:var(--card);margin-top:4px}
+.co-status-line{display:flex;gap:10px;align-items:center;margin-top:4px}
+.co-status-line select{border:1px solid var(--line);border-radius:8px;padding:6px 10px;background:var(--card)}
+
+.empty{font-size:13px;color:var(--ink-3);padding:8px 10px;font-style:italic}
+
+/* ---------- agent inbox ---------- */
+.inbox{background:var(--card);border:1.5px solid var(--cobalt);border-radius:14px;padding:18px 20px;margin:22px 0 6px}
+.inbox-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.inbox-head h3{font-variation-settings:'wdth' 112,'wght' 720;font-size:17px}
+.inbox-head .meta{font-family:var(--mono);font-size:11.5px;color:var(--ink-2)}
+.pr{display:grid;grid-template-columns:34px 1fr auto;gap:12px;align-items:start;padding:12px 0;border-bottom:1px solid var(--line)}
+.pr:last-child{border-bottom:none}
+.pr .sc{font-family:var(--mono);font-weight:600;font-size:13px;width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:var(--cobalt-soft);color:var(--cobalt)}
+.pr .sc.s5{background:var(--green-soft);color:var(--green)}
+.pr .who{font-size:14.5px;font-weight:600}
+.pr .who .pp{font-family:var(--mono);font-size:10.5px;padding:2px 7px;border-radius:5px;background:var(--bone);color:var(--ink-2);margin-left:7px;vertical-align:1px}
+.pr .co-of{font-size:12.5px;color:var(--ink-2)}
+.pr .why{font-size:13px;color:var(--ink-2);margin-top:4px}
+.pr .warm{font-size:12.5px;color:var(--green);margin-top:2px}
+.pr .acts{display:flex;gap:6px;align-items:center}
+.pr .acts .btn{padding:6px 11px;font-size:12.5px}
+footer{max-width:1240px;margin:0 auto;padding:0 32px 40px;font-family:var(--mono);font-size:11.5px;color:var(--ink-3)}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:#fff;padding:10px 18px;border-radius:9px;font-size:13px;font-weight:600;transition:transform .25s;z-index:50}
+.toast.show{transform:translateX(-50%) translateY(0)}
+@media(max-width:760px){
+  header,main,.stats,.rail,footer{padding-left:16px;padding-right:16px}
+  .co-row{grid-template-columns:5px 1fr auto;row-gap:8px}
+  .cov,.pcount{display:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="masthead">
+    <div>
+      <h1>Buyer's <span>Chair</span></h1>
+      <div class="sub">50 frontier AI &amp; tech targets · GTM pivot pipeline · Tyler Blackwell</div>
+    </div>
+    <div class="head-actions">
+      <button class="btn ghost" onclick="exportJSON()">Export backup</button>
+      <button class="btn ghost" onclick="document.getElementById('importFile').click()">Import</button>
+      <input type="file" id="importFile" accept=".json" style="display:none" onchange="importJSON(event)">
+      <input type="file" id="inboxFile" accept=".json" style="display:none" onchange="loadInboxFile(event)">
+      <button class="btn" onclick="loadInbox()">Load agent inbox</button>
+      <button class="btn primary" onclick="expandDue()">Show follow-ups due</button>
+    </div>
+  </div>
+</header>
+
+<section class="stats" id="stats"></section>
+
+<div class="rail" id="rail">
+  <button class="chip on" data-f="all" onclick="setFilter(this)">All tiers</button>
+  <button class="chip" data-f="1" onclick="setFilter(this)">1 · Frontier labs</button>
+  <button class="chip" data-f="2" onclick="setFilter(this)">2 · AI-native apps</button>
+  <button class="chip" data-f="3" onclick="setFilter(this)">3 · Data &amp; infra</button>
+  <button class="chip" data-f="4" onclick="setFilter(this)">4 · Platforms</button>
+  <button class="chip" data-f="5" onclick="setFilter(this)">5 · Defense &amp; physical</button>
+  <button class="chip" data-f="active" onclick="setFilter(this)">Active only</button>
+  <input type="search" id="q" placeholder="Search companies &amp; people…" oninput="render()">
+</div>
+
+<main id="list"></main>
+
+<footer>
+  Coverage cells: HM = hiring manager (VP/Head of Sales) · AE = current enterprise AE (intel) · RC = GTM recruiter.
+  Dashed = persona not yet identified. Solid green = identified. Blue = in conversation.
+  Data lives in this browser's localStorage — export a backup weekly.
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ============ seed data: 50 companies ============ */
+const SEED = [
+ // tier 1
+ ["Anthropic",1,"~$14B ARR, IPO filed. Leading enterprise logos in regulated industries.","financial services"],
+ ["OpenAI",1,"~$30B 2026 revenue target, IPO filed.",""],
+ ["Google (DeepMind / Cloud AI)",1,"Gemini enterprise + Cloud AI GTM.",""],
+ ["xAI / SpaceX",1,"Merged Feb 2026, $1.25T combined. Pre-IPO.",""],
+ ["Microsoft",1,"Copilot enterprise sales machine.",""],
+ ["Meta",1,"Llama enterprise partnerships.",""],
+ ["Mistral AI",1,"Europe's flagship lab, expanding US enterprise.",""],
+ // tier 2
+ ["Cursor (Anysphere)",2,"~$4B annualized revenue. Enterprise motion still young.",""],
+ ["Sierra",2,"$15.8B val, $150M ARR in 8 quarters. Salesforce sales DNA.",""],
+ ["ElevenLabs",2,"$500M+ ARR, voice platform scale.",""],
+ ["Glean",2,"~$200M ARR. Classic enterprise sales motion.",""],
+ ["Harvey",2,"$11B val, $200M+ ARR. Legal vertical. Sidley overlap.","legal"],
+ ["Cognition",2,"$37M to $492M ARR in 12 months. Goldman, NASA logos.",""],
+ ["Perplexity",2,"~$500M annualized. Building enterprise motion.",""],
+ ["Decagon",2,"$12B val, ~$100M ARR. Support agents.",""],
+ ["Lovable",2,"$400M ARR in under 2 years. Scaling US GTM.",""],
+ ["Abridge",2,"$5.3B val. Clinical AI, healthcare enterprise sales.","healthcare"],
+ ["OpenEvidence",2,"Clinical AI, fastest-growing healthcare play.","healthcare"],
+ ["Legora",2,"800+ law firms, 40 to 400 employees in a year. US expansion.","legal"],
+ ["Writer",2,"Enterprise-first, governance focus.",""],
+ ["EliseAI",2,"70% of top-50 US rental operators. Quiet and durable.",""],
+ ["Hebbia",2,"Document AI for finance and legal. Morningstar-adjacent.","financial services"],
+ ["Rogo",2,"Financial services AI agents. Strong domain fit.","financial services"],
+ ["Mercor",2,"$100M ARR in under 2 years. Talent x AI — direct workforce fit.","talent"],
+ ["Suno",2,"~$200M ARR. Consumer-lean, building partnerships.",""],
+ // tier 3
+ ["Databricks",3,"$134B val. Best enterprise AI sales org outside hyperscalers.","financial services"],
+ ["Snowflake",3,"Public, mature AE paths, deep in financial services.","financial services"],
+ ["NVIDIA",3,"Enterprise + partner GTM beyond chips.",""],
+ ["CoreWeave",3,"Public AI cloud, up 93% from IPO.",""],
+ ["Scale AI",3,"$13B val. Data infra for frontier labs.",""],
+ ["Together AI",3,"Inference infra, growing enterprise sales.",""],
+ ["Fireworks AI",3,"Inference infra, earlier stage.",""],
+ ["Cerebras",3,"Public, ~$60B market cap.",""],
+ ["Weights & Biases",3,"ML tooling with enterprise motion.",""],
+ ["Pinecone",3,"Vector DB, enterprise sales-led.",""],
+ ["LangChain",3,"Agent infra moving into enterprise contracts.",""],
+ // tier 4
+ ["Salesforce",4,"Agentforce is the whole narrative. Warm threads exist.",""],
+ ["ServiceNow",4,"Strongest AI monetization in public SaaS.",""],
+ ["Palantir",4,"AIP bootcamp-driven sales motion.",""],
+ ["Amazon (AWS)",4,"Bedrock + AI services sales.",""],
+ ["CrowdStrike",4,"AI x cybersecurity, up 129%.",""],
+ ["Datadog",4,"Observability for AI workloads.",""],
+ ["HubSpot",4,"AI-forward mid-market, strong sales culture.",""],
+ ["Notion",4,"AI embedded in productivity, expanding enterprise.",""],
+ ["Figma",4,"Public, design AI push, respected culture.",""],
+ // tier 5
+ ["Anduril",5,"Raising at ~$60B. Defense AI consolidation winner.","defense"],
+ ["Shield AI",5,"$12.7B val after Air Force win.","defense"],
+ ["Figure AI",5,"Humanoid robotics. High risk, high visibility.",""],
+ ["Waymo",5,"$126B val. B2B and partnership roles.",""],
+ ["Applied Intuition",5,"Autonomy software, strong enterprise sales.","defense"]
+];
+
+const TIERS = {1:"Tier 1 · Frontier labs",2:"Tier 2 · AI-native application leaders",3:"Tier 3 · Data & AI infrastructure",4:"Tier 4 · Established platforms",5:"Tier 5 · Defense & physical AI"};
+const TCOLOR = {1:"var(--t1)",2:"var(--t2)",3:"var(--t3)",4:"var(--t4)",5:"var(--t5)"};
+const CO_STATUS = ["Not started","Researching","Outreach live","Interviewing","Paused"];
+const CO_BADGE = {"Not started":"b-not","Researching":"b-res","Outreach live":"b-out","Interviewing":"b-int","Paused":"b-pau"};
+const P_STATUS = ["Identified","Requested","Connected","In conversation","Meeting booked","Went cold"];
+const PERSONAS = ["HM","AE","RC"];
+const PERSONA_LABEL = {HM:"Hiring manager",AE:"Enterprise AE",RC:"GTM recruiter"};
+
+/* ============ state ============ */
+const KEY = "buyersChair.v1";
+let state = load();
+state.dismissed = state.dismissed || [];
+let inbox = [];
+let filter = "all";
+
+function load(){
+  try{
+    const raw = localStorage.getItem(KEY);
+    if(raw) return JSON.parse(raw);
+  }catch(e){}
+  return {companies: SEED.map(([name,tier,note,vertical],i)=>({
+    id:"c"+i, name, tier, note, vertical,
+    status:"Not started", people:[], roles:[], notes:""
+  }))};
+}
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){ toast("Could not save — storage unavailable"); } }
+function toast(msg){ const t=document.getElementById("toast"); t.textContent=msg; t.classList.add("show"); setTimeout(()=>t.classList.remove("show"),2200); }
+
+/* ============ linkedin search links ============ */
+function liSearch(company, phrase){
+  return "https://www.linkedin.com/search/results/people/?keywords=" + encodeURIComponent('"'+company+'" '+phrase);
+}
+function liJobs(company){
+  return "https://www.linkedin.com/jobs/search/?keywords=" + encodeURIComponent(company + " account executive");
+}
+function searchSet(c){
+  const short = c.name.split("(")[0].trim();
+  const sets = [
+    ["VP / Head of Sales", '("VP Sales" OR "Head of Sales" OR "CRO")'],
+    ["Enterprise AE", '"enterprise account executive"'],
+    ["GTM recruiter", '(recruiter AND (GTM OR sales))'],
+  ];
+  if(c.vertical==="financial services") sets.push(["FinServ AE", '"account executive" "financial services"']);
+  if(c.vertical==="talent") sets.push(["Talent GTM", '"go to market" talent']);
+  return sets.map(([label,phrase])=>
+    `<a class="sl" target="_blank" rel="noopener" href="${liSearch(short,phrase)}">${label} ${ext()}</a>`
+  ).join("") + `<a class="sl" target="_blank" rel="noopener" href="${liJobs(short)}">Open AE roles ${ext()}</a>`;
+}
+function ext(){return `<svg viewBox="0 0 12 12" fill="none"><path d="M3 9L9 3M9 3H4M9 3V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>`;}
+
+/* ============ derived ============ */
+function coverage(c){
+  const out = {};
+  for(const p of PERSONAS){
+    const matches = c.people.filter(x=>x.persona===p);
+    if(!matches.length){ out[p]="none"; continue; }
+    out[p] = matches.some(x=>["In conversation","Meeting booked"].includes(x.status)) ? "hot" : "filled";
+  }
+  return out;
+}
+function dueCount(c){
+  const today = new Date().toISOString().slice(0,10);
+  return c.people.filter(p=>p.next && p.next<=today && p.status!=="Went cold").length;
+}
+
+/* ============ render ============ */
+function setFilter(el){
+  document.querySelectorAll(".chip").forEach(x=>x.classList.remove("on"));
+  el.classList.add("on");
+  filter = el.dataset.f;
+  render();
+}
+const openSet = new Set();
+
+function render(){
+  const q = document.getElementById("q").value.toLowerCase();
+  // stats
+  const cos = state.companies;
+  const totPeople = cos.reduce((n,c)=>n+c.people.length,0);
+  const convos = cos.reduce((n,c)=>n+c.people.filter(p=>["In conversation","Meeting booked"].includes(p.status)).length,0);
+  const due = cos.reduce((n,c)=>n+dueCount(c),0);
+  const active = cos.filter(c=>c.status!=="Not started"&&c.status!=="Paused").length;
+  const interviewing = cos.filter(c=>c.status==="Interviewing").length;
+  document.getElementById("stats").innerHTML = `
+    <div class="stat"><div class="n">${active}<span style="font-size:15px;color:var(--ink-3)">/50</span></div><div class="l">Companies active</div></div>
+    <div class="stat"><div class="n">${totPeople}</div><div class="l">People tracked</div></div>
+    <div class="stat good"><div class="n">${convos}</div><div class="l">Live conversations</div></div>
+    <div class="stat ${due?'alert':''}"><div class="n">${due}</div><div class="l">Follow-ups due</div></div>
+    <div class="stat good"><div class="n">${interviewing}</div><div class="l">Interviewing</div></div>`;
+
+  // list
+  let html = inboxSection();
+  for(const t of [1,2,3,4,5]){
+    const group = cos.filter(c=>{
+      if(filter==="active" && (c.status==="Not started"||c.status==="Paused")) return false;
+      if(filter!=="all" && filter!=="active" && c.tier!==+filter) return false;
+      if(c.tier!==t) return false;
+      if(q){
+        const hay = (c.name+" "+c.note+" "+c.people.map(p=>p.name+" "+p.title).join(" ")).toLowerCase();
+        if(!hay.includes(q)) return false;
+      }
+      return true;
+    });
+    if(!group.length) continue;
+    html += `<div class="tier-head">${TIERS[t]}</div>`;
+    for(const c of group) html += coCard(c);
+  }
+  document.getElementById("list").innerHTML = html || `<div class="empty" style="padding:30px 0">Nothing matches. Clear the search or switch tiers.</div>`;
+}
+
+function coCard(c){
+  const cov = coverage(c);
+  const due = dueCount(c);
+  const open = openSet.has(c.id);
+  return `<div class="co ${open?'open':''}" id="${c.id}">
+    <div class="co-row" onclick="toggle('${c.id}')">
+      <div class="tbar" style="background:${TCOLOR[c.tier]}"></div>
+      <div>
+        <div class="co-name">${c.name}</div>
+        <div class="co-note">${c.note}</div>
+      </div>
+      <div class="cov" title="Persona coverage: HM / AE / RC">
+        ${PERSONAS.map(p=>`<div class="cell ${cov[p]==='none'?'':cov[p]}">${p}</div>`).join("")}
+      </div>
+      <div class="pcount">${due?`<span class="due-dot" title="follow-up due"></span>`:""}${c.people.length} ppl</div>
+      <span class="badge ${CO_BADGE[c.status]}">${c.status}</span>
+      <div style="width:6px"></div>
+    </div>
+    <div class="co-body">
+      <div class="co-status-line">
+        <label style="font-family:var(--mono);font-size:11px;color:var(--ink-2)">STATUS</label>
+        <select onchange="setCoStatus('${c.id}',this.value)">
+          ${CO_STATUS.map(s=>`<option ${s===c.status?"selected":""}>${s}</option>`).join("")}
+        </select>
+      </div>
+      <h4>Find people — one-click LinkedIn searches</h4>
+      <div class="searchlinks">${searchSet(c)}</div>
+      <h4>People (${c.people.length})</h4>
+      ${peopleTable(c)}
+      <div class="addline">
+        <input id="pn-${c.id}" placeholder="Name">
+        <input id="pt-${c.id}" placeholder="Title">
+        <input id="pu-${c.id}" placeholder="LinkedIn URL (optional)">
+        <select id="pp-${c.id}">${PERSONAS.map(p=>`<option value="${p}">${PERSONA_LABEL[p]}</option>`).join("")}</select>
+        <button class="btn" onclick="addPerson('${c.id}')">Add person</button>
+      </div>
+      <h4>Company notes</h4>
+      <textarea class="notesbox" placeholder="Warm intros, product angle, comp intel, why-them narrative…" onchange="setNotes('${c.id}',this.value)">${esc(c.notes)}</textarea>
+    </div>
+  </div>`;
+}
+
+function peopleTable(c){
+  if(!c.people.length) return `<div class="empty">No one tracked yet. Use the searches above, then add your targets here.</div>`;
+  return `<table><thead><tr><th>Name</th><th>Title</th><th>Persona</th><th>Status</th><th>Next follow-up</th><th></th></tr></thead><tbody>
+  ${c.people.map((p,i)=>`<tr>
+    <td>${p.url?`<a class="linkA" target="_blank" rel="noopener" href="${esc(p.url)}">${esc(p.name)}</a>`:esc(p.name)}</td>
+    <td>${esc(p.title)}</td>
+    <td style="font-family:var(--mono);font-size:12px">${p.persona}</td>
+    <td><select onchange="setPStatus('${c.id}',${i},this.value)">${P_STATUS.map(s=>`<option ${s===p.status?"selected":""}>${s}</option>`).join("")}</select></td>
+    <td><input type="date" value="${p.next||""}" onchange="setPNext('${c.id}',${i},this.value)"></td>
+    <td><button class="mini" onclick="delPerson('${c.id}',${i})" title="Remove">✕</button></td>
+  </tr>`).join("")}
+  </tbody></table>`;
+}
+
+function esc(s){return (s||"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));}
+
+/* ============ actions ============ */
+function findCo(id){return state.companies.find(c=>c.id===id);}
+function toggle(id){ openSet.has(id)?openSet.delete(id):openSet.add(id); render(); }
+function setCoStatus(id,v){ findCo(id).status=v; save(); render(); }
+function setNotes(id,v){ findCo(id).notes=v; save(); }
+function addPerson(id){
+  const n=document.getElementById("pn-"+id).value.trim();
+  if(!n){ toast("Name required"); return; }
+  const c=findCo(id);
+  c.people.push({
+    name:n,
+    title:document.getElementById("pt-"+id).value.trim(),
+    url:document.getElementById("pu-"+id).value.trim(),
+    persona:document.getElementById("pp-"+id).value,
+    status:"Identified", next:""
+  });
+  if(c.status==="Not started") c.status="Researching";
+  save(); render(); toast("Added "+n);
+}
+function delPerson(id,i){ findCo(id).people.splice(i,1); save(); render(); }
+function setPStatus(id,i,v){ findCo(id).people[i].status=v; save(); render(); }
+function setPNext(id,i,v){ findCo(id).people[i].next=v; save(); render(); }
+
+function expandDue(){
+  openSet.clear();
+  let n=0;
+  for(const c of state.companies) if(dueCount(c)){ openSet.add(c.id); n++; }
+  if(!n){ toast("No follow-ups due. Pipeline is clean."); }
+  render();
+  if(n){ toast(n+" compan"+(n>1?"ies":"y")+" with follow-ups due"); }
+}
+
+/* ============ agent inbox ============ */
+function visibleInbox(){
+  const tracked = new Set();
+  for(const c of state.companies) for(const p of c.people) if(p.agentId) tracked.add(p.agentId);
+  return inbox.filter(p=>!state.dismissed.includes(p.id) && !tracked.has(p.id));
+}
+function inboxSection(){
+  const items = visibleInbox();
+  if(!items.length) return "";
+  return `<div class="inbox">
+    <div class="inbox-head">
+      <h3>Agent inbox — ${items.length} to review</h3>
+      <span class="meta">Found via Apollo, scored by Claude. Approve to add to a company's pipeline; dismiss to hide forever.</span>
+    </div>
+    ${items.slice(0,40).map(p=>`<div class="pr">
+      <div class="sc ${p.score>=5?'s5':''}">${p.score}</div>
+      <div>
+        <div class="who">${p.linkedin_url?`<a class="linkA" target="_blank" rel="noopener" href="${esc(p.linkedin_url)}">${esc(p.name)}</a>`:esc(p.name)}<span class="pp">${p.persona}</span></div>
+        <div class="co-of">${esc(p.title)} · ${esc(p.company)}${p.location?" · "+esc(p.location):""}</div>
+        ${p.why?`<div class="why">${esc(p.why)}</div>`:""}
+        ${p.warm_angle?`<div class="warm">Warm angle: ${esc(p.warm_angle)}</div>`:""}
+      </div>
+      <div class="acts">
+        <button class="btn primary" onclick="approveP('${p.id}')">Approve</button>
+        <button class="btn ghost" onclick="dismissP('${p.id}')">Dismiss</button>
+      </div>
+    </div>`).join("")}
+    ${items.length>40?`<div class="empty">Showing top 40 by score. Approve or dismiss to see more.</div>`:""}
+  </div>`;
+}
+function loadInbox(){
+  fetch("prospects.json",{cache:"no-store"})
+    .then(r=>{ if(!r.ok) throw new Error(); return r.json(); })
+    .then(d=>{ inbox=d.prospects||[]; render();
+      const n=visibleInbox().length;
+      toast(n?n+" prospects to review":"Inbox is clear"); })
+    .catch(()=>{ toast("No prospects.json here — pick the file manually");
+      document.getElementById("inboxFile").click(); });
+}
+function loadInboxFile(ev){
+  const f=ev.target.files[0]; if(!f) return;
+  const r=new FileReader();
+  r.onload=()=>{ try{ const d=JSON.parse(r.result); inbox=d.prospects||[]; render();
+      toast(visibleInbox().length+" prospects to review"); }
+    catch(e){ toast("Invalid prospects file"); } };
+  r.readAsText(f);
+}
+function approveP(id){
+  const p=inbox.find(x=>x.id===id); if(!p) return;
+  const c=state.companies.find(c=>c.name===p.company);
+  if(!c){ toast("Company not found: "+p.company); return; }
+  c.people.push({name:p.name,title:p.title,url:p.linkedin_url,persona:p.persona,status:"Identified",next:"",agentId:p.id});
+  if(c.status==="Not started") c.status="Researching";
+  save(); render(); toast("Added "+p.name+" to "+c.name);
+}
+function dismissP(id){
+  state.dismissed.push(id);
+  save(); render();
+}
+
+function exportJSON(){
+  const blob = new Blob([JSON.stringify(state,null,2)],{type:"application/json"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "buyers-chair-backup-"+new Date().toISOString().slice(0,10)+".json";
+  a.click();
+  toast("Backup exported");
+}
+function importJSON(ev){
+  const f = ev.target.files[0]; if(!f) return;
+  const r = new FileReader();
+  r.onload = ()=>{ try{ state = JSON.parse(r.result); save(); render(); toast("Backup restored"); }catch(e){ toast("Invalid backup file"); } };
+  r.readAsText(f);
+}
+
+render();
+</script>
+</body>
+</html>
