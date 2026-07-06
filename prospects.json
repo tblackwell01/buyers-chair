@@ -1,5 +1,5 @@
 {
- "generated": "2026-07-03T18:18:35+00:00",
+ "generated": "2026-07-06T14:25:16+00:00",
  "prospects": [
   {
    "id": "a1d34efb29b7",
@@ -52,6 +52,19 @@
    "why": "Financial Services AE is the most valuable peer target: same vertical Tyler is pursuing, can share team dynamics, open reqs, hiring bar, and make a warm intro to Genevieve.",
    "warm_angle": "Tyler is a former enterprise buyer in financial data/services who has run the exact sales cycle Gabi works \u2014 credible peer conversation, not a cold ask.",
    "found": "2026-07-02"
+  },
+  {
+   "id": "6e448b61957d",
+   "company": "Anthropic",
+   "name": "Angela",
+   "title": "GTM Recruiter",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "RC",
+   "score": 5,
+   "why": "GTM Recruiter is the highest-leverage first contact\u2014directly owns AE requisitions and can validate whether financial services vertical roles are open or planned.",
+   "warm_angle": "Tyler's dual identity as a former enterprise AI buyer and hands-on Claude practitioner is an unusual and memorable hook that differentiates him from typical AE candidates in an RC's pipeline.",
+   "found": "2026-07-06"
   },
   {
    "id": "c84e716a752e",
@@ -561,6 +574,19 @@
    "found": "2026-07-02"
   },
   {
+   "id": "e8dd8ae8dd30",
+   "company": "OpenAI",
+   "name": "Matthew",
+   "title": "Head of Sales",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "HM",
+   "score": 5,
+   "why": "Head of Sales at OpenAI is the highest-leverage hiring manager target for an enterprise AE role \u2014 direct decision-maker for GTM headcount.",
+   "warm_angle": "Tyler's rare buyer-side credibility (ran enterprise AI vendor evaluations, security reviews, procurement) maps directly to the consultative seller OpenAI needs for complex enterprise deals.",
+   "found": "2026-07-06"
+  },
+  {
    "id": "dd0ee53047d8",
    "company": "Perplexity",
    "name": "Jared",
@@ -650,6 +676,19 @@
    "why": "Senior GTM Sales Recruiter is the highest-value recruiter touch \u2014 directly owns the pipeline Tyler wants to enter.",
    "warm_angle": "Tyler's 'buyer they're trying to sell to' positioning is a crisp hook: he's run enterprise AI vendor selection at a public company, rare in AE candidate pools.",
    "found": "2026-07-03"
+  },
+  {
+   "id": "ca5b2d9f50a3",
+   "company": "Shield AI",
+   "name": "Katy",
+   "title": "Senior Vice President, Software Sales",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "HM",
+   "score": 5,
+   "why": "SVP Software Sales is the most direct hiring authority for enterprise AE roles at Shield AI.",
+   "warm_angle": "Tyler's buyer-side credibility selling into defense-adjacent enterprise AI governance could resonate with a software sales leader building out the team.",
+   "found": "2026-07-06"
   },
   {
    "id": "7b591cd8a7f6",
@@ -886,6 +925,45 @@
    "found": "2026-07-02"
   },
   {
+   "id": "ef5b52dfdc64",
+   "company": "Anthropic",
+   "name": "Shambhavi",
+   "title": "Head of GTM Strategy & Operations, Partnerships",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "HM",
+   "score": 4,
+   "why": "GTM Strategy & Operations owns pipeline design and AE capacity planning\u2014directly relevant to Tyler's workforce planning and enterprise transformation background.",
+   "warm_angle": "Tyler's buyer-side experience running vendor evaluation and procurement cycles maps cleanly to GTM strategy conversations about what makes enterprise AI sales motions work.",
+   "found": "2026-07-06"
+  },
+  {
+   "id": "dd076b26e746",
+   "company": "Anthropic",
+   "name": "Spencer",
+   "title": "Strategic Account Executive",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 4,
+   "why": "Strategic AE tier means he sells into exactly the large enterprise accounts Tyler came from; ideal intel source on territory structure, quota, and financial services coverage.",
+   "warm_angle": "Tyler can open as a former enterprise buyer who ran Anthropic-adjacent AI governance decisions\u2014peer credibility that bypasses typical cold-outreach skepticism.",
+   "found": "2026-07-06"
+  },
+  {
+   "id": "fd2f987d8700",
+   "company": "Applied Intuition",
+   "name": "James",
+   "title": "Global Head of Sales",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "HM",
+   "score": 4,
+   "why": "Global Head of Sales is the direct hiring authority for enterprise AE/GTM roles at Applied Intuition.",
+   "warm_angle": "Tyler's buyer-side credibility in enterprise AI sales cycles (vendor eval, procurement, stakeholder persuasion) is a compelling pitch to a sales leader building a defense/enterprise GTM team.",
+   "found": "2026-07-06"
+  },
+  {
    "id": "8eaabe3f14ac",
    "company": "Cerebras",
    "name": "James",
@@ -1053,6 +1131,32 @@
    "why": "Second GTM recruiter doubles the chance of active requisition visibility; worth parallel outreach.",
    "warm_angle": "Same hook as Michelle \u2014 GTM recruiter pair likely split roles, so both are worth a brief reach-out referencing Cursor's enterprise expansion.",
    "found": "2026-07-02"
+  },
+  {
+   "id": "4884e0e16149",
+   "company": "Cursor (Anysphere)",
+   "name": "Divansh",
+   "title": "Director of Sales Marketing",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "HM",
+   "score": 4,
+   "why": "Director of Sales Marketing is likely involved in GTM hiring decisions and org structure at Cursor's enterprise sales build-out.",
+   "warm_angle": "Tyler's buyer-side enterprise AI sales cycle experience (vendor eval, security review, procurement) is directly relevant to shaping Cursor's enterprise GTM motion.",
+   "found": "2026-07-06"
+  },
+  {
+   "id": "5f5fab3a2c41",
+   "company": "Cursor (Anysphere)",
+   "name": "April",
+   "title": "Talent Acquisition",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "RC",
+   "score": 4,
+   "why": "Talent Acquisition is the direct pipeline contact for any open GTM/AE roles Cursor is staffing.",
+   "warm_angle": "Tyler's hands-on Claude/API builds plus enterprise AI governance background makes him an unusually technical and credible AE candidate to flag to hiring managers.",
+   "found": "2026-07-06"
   },
   {
    "id": "1300389f7088",
@@ -1326,6 +1430,32 @@
    "why": "GTM Recruiter for Google Cloud is a third recruiter touch point worth activating to maximize visibility into open roles.",
    "warm_angle": "Chicago location may align with Midwest territory AE openings; Tyler's local market presence and ex-EY network add placement value.",
    "found": "2026-07-02"
+  },
+  {
+   "id": "e9ae428dfb77",
+   "company": "Google (DeepMind / Cloud AI)",
+   "name": "Pedro",
+   "title": "Head of GTM Strategy",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "HM",
+   "score": 4,
+   "why": "Head of GTM Strategy at Google could own or influence enterprise AE hiring and GTM team composition.",
+   "warm_angle": "Tyler's rare combo of having run the buyer side of enterprise AI sales cycles maps directly to GTM strategy conversations about what makes enterprise AI deals close.",
+   "found": "2026-07-06"
+  },
+  {
+   "id": "a2468433b722",
+   "company": "Google (DeepMind / Cloud AI)",
+   "name": "Minna",
+   "title": "Cloud GTM Recruiter",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "RC",
+   "score": 4,
+   "why": "Cloud GTM Recruiter is the most direct path to open Enterprise AE roles on Google Cloud; should be contacted in parallel with HM.",
+   "warm_angle": "Tyler can lead with his internal Claude Code deployment and HR AI governance committee seat as proof of enterprise AI credibility that maps to Cloud GTM hiring criteria.",
+   "found": "2026-07-06"
   },
   {
    "id": "0e26955295c4",
@@ -1627,6 +1757,19 @@
    "found": "2026-07-02"
   },
   {
+   "id": "38e69fca9840",
+   "company": "Meta",
+   "name": "Richard",
+   "title": "Talent Acquisition",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "RC",
+   "score": 4,
+   "why": "Direct path to open enterprise AE or GTM roles at Meta; Tyler's rare buyer-turned-seller profile is a concrete pitch for a recruiter to carry internally",
+   "warm_angle": "Tyler's hands-on Claude/AI deployment experience at Morningstar aligns with Meta AI product push; recruiter can position him as someone who has literally been the enterprise buyer they sell to",
+   "found": "2026-07-06"
+  },
+  {
    "id": "d43cd4aad0bf",
    "company": "Microsoft",
    "name": "Violaine",
@@ -1638,6 +1781,19 @@
    "why": "Strategic Enterprise AE can share intel on open roles, team culture, quota expectations, and hiring bar",
    "warm_angle": "Tyler can offer reciprocal value as a former enterprise AI buyer who understands exactly what enterprise AEs face in complex AI sales cycles",
    "found": "2026-07-02"
+  },
+  {
+   "id": "04a65af2243b",
+   "company": "Microsoft",
+   "name": "Shivani",
+   "title": "Talent Acquisition",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "RC",
+   "score": 4,
+   "why": "Talent Acquisition contact at Microsoft is the most direct path to getting Tyler into the formal hiring pipeline.",
+   "warm_angle": "Tyler's rare profile \u2014 HR/workforce planning background pivoting to AI GTM with hands-on Claude deployment \u2014 is a differentiated story that stands out in recruiter outreach.",
+   "found": "2026-07-06"
   },
   {
    "id": "7f4095282a57",
@@ -1703,6 +1859,19 @@
    "why": "Dale is the most likely US-facing recruiter given North American naming convention; highest-priority RC contact",
    "warm_angle": "Tyler's rare combo of hands-on Claude/API deployment and enterprise buyer credibility is a strong pitch hook for a recruiter needing to differentiate AE candidates",
    "found": "2026-07-02"
+  },
+  {
+   "id": "e724293cd236",
+   "company": "Mistral AI",
+   "name": "Benjamin",
+   "title": "Talent Acquisition",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "RC",
+   "score": 4,
+   "why": "Talent Acquisition is the direct pipeline into open GTM roles; highest-leverage contact for surfacing US AE/GTM opportunities quickly.",
+   "warm_angle": "Tyler's rare buyer-side enterprise AI governance background (financial services, HR tech, Claude Code deployment) gives the recruiter a genuinely differentiated candidate story to bring to hiring managers.",
+   "found": "2026-07-06"
   },
   {
    "id": "dd663a422881",
@@ -1861,6 +2030,32 @@
    "found": "2026-07-03"
   },
   {
+   "id": "d053dc87fcd1",
+   "company": "Shield AI",
+   "name": "Patrick",
+   "title": "Sr. Sales Director, Americas",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "HM",
+   "score": 4,
+   "why": "Sr. Sales Director Americas likely owns AE headcount and quota in Tyler's target geography.",
+   "warm_angle": "Tyler's consulting network (EY, Kincentric) and enterprise transformation background maps to the complex, multi-stakeholder deals Shield AI runs in the Americas.",
+   "found": "2026-07-06"
+  },
+  {
+   "id": "58f3db3fea45",
+   "company": "Shield AI",
+   "name": "Tyler",
+   "title": "Senior Staff Business Development Account Executive",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 4,
+   "why": "Senior Staff BD AE is a peer-level intel source on what Shield AI actually looks for in enterprise sellers.",
+   "warm_angle": "Shared first name is a lightweight icebreaker; Tyler can open with curiosity about how they sell AI autonomy into complex enterprise procurement cycles.",
+   "found": "2026-07-06"
+  },
+  {
    "id": "4d8583f6596c",
    "company": "Sierra",
    "name": "Ben",
@@ -1911,6 +2106,19 @@
    "why": "Sales Recruiter directly owns the AE hiring pipeline Tyler wants to enter \u2014 fastest path to being in the process.",
    "warm_angle": "Tyler's 'buyer who became the seller' narrative is a ready-made pitch for a recruiter screening enterprise AI AE candidates.",
    "found": "2026-07-02"
+  },
+  {
+   "id": "8c0d09f63299",
+   "company": "Sierra",
+   "name": "Deirdre",
+   "title": "Head of Sales, UK",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "HM",
+   "score": 4,
+   "why": "Head of Sales UK is a hiring manager peer who can speak to open AE roles and make referrals to US sales leadership; international angle is secondary but she understands the AE motion deeply.",
+   "warm_angle": "Tyler's buyer-side experience running enterprise AI vendor evaluations maps directly to the customer Sierra sells to \u2014 strong hook for a 'I've been your buyer' opener.",
+   "found": "2026-07-06"
   },
   {
    "id": "d930ea49a098",
@@ -2082,6 +2290,58 @@
    "found": "2026-07-03"
   },
   {
+   "id": "0356901fdda8",
+   "company": "Anduril",
+   "name": "Elizabeth",
+   "title": "Director, Programs and Sales Operations",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "HM",
+   "score": 3,
+   "why": "Director-level sales ops leader likely close to hiring decisions and AE workflow; can speak to open roles and team structure.",
+   "warm_angle": "",
+   "found": "2026-07-06"
+  },
+  {
+   "id": "d6edb066b39b",
+   "company": "Anduril",
+   "name": "Diana",
+   "title": "Associate Director, Inside Sales (Voyager)",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "HM",
+   "score": 3,
+   "why": "Associate Director inside sales for Voyager product line; direct insight into AE hiring needs for a specific Anduril vertical.",
+   "warm_angle": "",
+   "found": "2026-07-06"
+  },
+  {
+   "id": "a57a74a3030a",
+   "company": "Anduril",
+   "name": "Amy",
+   "title": "Talent Acquisition",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "RC",
+   "score": 3,
+   "why": "Talent Acquisition at Anduril; direct path to open GTM/AE requisitions and internal referral process.",
+   "warm_angle": "",
+   "found": "2026-07-06"
+  },
+  {
+   "id": "3c81e722c647",
+   "company": "Anduril",
+   "name": "Michael",
+   "title": "Talent Acquisition",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "RC",
+   "score": 3,
+   "why": "Second TA contact increases odds of reaching the recruiter who owns GTM roles; worth a parallel outreach.",
+   "warm_angle": "",
+   "found": "2026-07-06"
+  },
+  {
    "id": "1ac7fb31bab8",
    "company": "Anthropic",
    "name": "Nick",
@@ -2145,6 +2405,58 @@
    "why": "Third GTM Recruiter \u2014 redundant if already engaged with Morgan or Liam; only contact if no response from others.",
    "warm_angle": "",
    "found": "2026-07-02"
+  },
+  {
+   "id": "d2b49c124115",
+   "company": "Anthropic",
+   "name": "Christopher",
+   "title": "Head GTM Systems",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "HM",
+   "score": 3,
+   "why": "GTM Systems head may influence AE tooling and onboarding but is an indirect hiring path; worth a light touch if direct sales HMs don't pan out.",
+   "warm_angle": "Tyler's hands-on deployment of Claude Code and MCP-governed retrieval gives him a credible technical-practitioner angle to discuss GTM systems infrastructure.",
+   "found": "2026-07-06"
+  },
+  {
+   "id": "d8c169c87cd1",
+   "company": "Anthropic",
+   "name": "Minoru",
+   "title": "Senior Account Executive",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 3,
+   "why": "Senior AE is a solid intel conversation on comp structure, deal cycles, and what Anthropic looks for in new AE hires, though less strategic than the Strategic AE tier.",
+   "warm_angle": "Tyler's Morningstar/financial-data background is a natural conversation starter if Minoru covers any fintech or financial services accounts.",
+   "found": "2026-07-06"
+  },
+  {
+   "id": "d24b31ba33f2",
+   "company": "Applied Intuition",
+   "name": "Nick",
+   "title": "Recruiting",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "RC",
+   "score": 3,
+   "why": "Recruiting contact is a standard inbound path for job search outreach at Applied Intuition.",
+   "warm_angle": "Tyler's combination of hands-on Claude/API deployment and enterprise AI governance is a rare profile that stands out in a technically-oriented defense AI company's talent pool.",
+   "found": "2026-07-06"
+  },
+  {
+   "id": "776b834f1b66",
+   "company": "Applied Intuition",
+   "name": "Jack",
+   "title": "Recruiting",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "RC",
+   "score": 3,
+   "why": "Second recruiting contact; worth reaching if Nick doesn't respond.",
+   "warm_angle": "Same angle as Nick; Tyler's Prosci-certified change management plus hands-on AI build experience differentiates him from typical GTM candidates.",
+   "found": "2026-07-06"
   },
   {
    "id": "8f4c154e38e7",
@@ -2314,6 +2626,32 @@
    "why": "Another Strategic Enterprise AE; useful for corroborating intel from a second perspective on team culture and hiring plans.",
    "warm_angle": "Same buyer-side angle \u2014 Tyler has lived the vendor evaluation and procurement process these AEs navigate daily.",
    "found": "2026-07-02"
+  },
+  {
+   "id": "9c3d21d4f63e",
+   "company": "Cursor (Anysphere)",
+   "name": "Davesh",
+   "title": "Strategic Enterprise Account Executive",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 3,
+   "why": "Strategic Enterprise AE can share intel on Cursor's enterprise sales process, team culture, and open roles.",
+   "warm_angle": "Peer-level conversation: Tyler can speak the same language as an enterprise AI seller and offer perspective from the buyer's side of Cursor-type deals.",
+   "found": "2026-07-06"
+  },
+  {
+   "id": "30e45a13d225",
+   "company": "Cursor (Anysphere)",
+   "name": "Cole",
+   "title": "Strategic Enterprise Account Executive",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 3,
+   "why": "Second Strategic Enterprise AE provides a parallel intel source on team structure and what Cursor looks for in sellers.",
+   "warm_angle": "Same peer angle as Davesh; two data points on enterprise team culture and hiring signals are better than one.",
+   "found": "2026-07-06"
   },
   {
    "id": "386417ee69ba",
@@ -2693,6 +3031,45 @@
    "found": "2026-07-02"
   },
   {
+   "id": "244080c3c1c2",
+   "company": "Google (DeepMind / Cloud AI)",
+   "name": "Jan",
+   "title": "Senior Enterprise Account Executive",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 3,
+   "why": "Senior Enterprise AE at Google Cloud is a peer-level intel source on what the role actually looks like and how hiring flows.",
+   "warm_angle": "Tyler can open with his hands-on Claude/API build experience and enterprise AI governance background as genuine peer credibility.",
+   "found": "2026-07-06"
+  },
+  {
+   "id": "c4c0846989b9",
+   "company": "Google (DeepMind / Cloud AI)",
+   "name": "Lena",
+   "title": "Senior Enterprise Account Executive",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 3,
+   "why": "Same peer-level intel value as Jan; two AE conversations at Google Cloud increases signal on team culture and open roles.",
+   "warm_angle": "Same angle: enterprise AI buyer-turned-seller narrative is a natural conversation starter with someone living the sell side daily.",
+   "found": "2026-07-06"
+  },
+  {
+   "id": "fc4bf2198ca1",
+   "company": "Google (DeepMind / Cloud AI)",
+   "name": "Brian",
+   "title": "Sr Enterprise Account Executive",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 3,
+   "why": "Third senior AE contact; marginal incremental value over Jan/Lena but worth reaching if the other two don't respond.",
+   "warm_angle": "Tyler's Morningstar financial data background could resonate if Brian covers financial services accounts.",
+   "found": "2026-07-06"
+  },
+  {
    "id": "40b2b79196a5",
    "company": "Harvey",
    "name": "Becca",
@@ -2979,6 +3356,45 @@
    "found": "2026-07-02"
   },
   {
+   "id": "5730a1c2d6e6",
+   "company": "Meta",
+   "name": "James",
+   "title": "Enterprise Account Executive",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 3,
+   "why": "Peer-level intel on Meta's enterprise AI sales motion, quota structure, and what buyer profiles they target",
+   "warm_angle": "",
+   "found": "2026-07-06"
+  },
+  {
+   "id": "610ff2eccb52",
+   "company": "Meta",
+   "name": "Nanditha",
+   "title": "Enterprise Account Executive",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 3,
+   "why": "Peer-level conversation about day-to-day enterprise AE role at Meta, deal cycles, and whether Tyler's buyer-side profile resonates",
+   "warm_angle": "",
+   "found": "2026-07-06"
+  },
+  {
+   "id": "d9c9a33970f9",
+   "company": "Meta",
+   "name": "Corey",
+   "title": "Enterprise Account Executive",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 3,
+   "why": "Same as other AEs; triangulating intel from multiple reps gives clearer picture of team culture and open headcount",
+   "warm_angle": "",
+   "found": "2026-07-06"
+  },
+  {
    "id": "51707f7ec1dd",
    "company": "Microsoft",
    "name": "Isabell",
@@ -3057,6 +3473,45 @@
    "found": "2026-07-02"
   },
   {
+   "id": "3bd02a3a2ee3",
+   "company": "Microsoft",
+   "name": "Saritha",
+   "title": "Head of GTM Finance",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "HM",
+   "score": 3,
+   "why": "GTM Finance head could oversee AE roles selling into financial services, Tyler's strongest vertical.",
+   "warm_angle": "Tyler's Morningstar background (public financial data) makes him a natural fit for finance-vertical GTM conversations at Microsoft.",
+   "found": "2026-07-06"
+  },
+  {
+   "id": "1808e1015460",
+   "company": "Microsoft",
+   "name": "Cillian",
+   "title": "Senior Enterprise Account Executive",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 3,
+   "why": "Senior Enterprise AE at Microsoft can offer intel on team culture, quota structure, and open headcount.",
+   "warm_angle": "Tyler's hands-on Claude/MCP deployment experience is a credible peer conversation starter with an enterprise seller navigating AI deals.",
+   "found": "2026-07-06"
+  },
+  {
+   "id": "9f198941e8b4",
+   "company": "Microsoft",
+   "name": "Tina",
+   "title": "Senior Enterprise Account Executive",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 3,
+   "why": "Second Senior Enterprise AE target for intel on hiring climate and what Microsoft values in AE candidates.",
+   "warm_angle": "Tyler's buyer-side enterprise AI governance experience (vendor eval, security review, procurement) is a compelling peer hook.",
+   "found": "2026-07-06"
+  },
+  {
    "id": "31e522875eb4",
    "company": "Mistral AI",
    "name": "Enzo",
@@ -3107,6 +3562,19 @@
    "why": "Talent Acquisition contact; one of three recruiters so prioritize outreach to avoid redundancy",
    "warm_angle": "",
    "found": "2026-07-02"
+  },
+  {
+   "id": "9b43a597c068",
+   "company": "Mistral AI",
+   "name": "Maxime",
+   "title": "Account Executive & GTM Luxembourg",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 3,
+   "why": "Peer-level AE who can share intel on Mistral's GTM motion, team culture, and open roles in the US market.",
+   "warm_angle": "Tyler can open with his hands-on Claude/MCP deployment experience as credible peer context, then ask about Mistral's enterprise sales approach and any US headcount plans.",
+   "found": "2026-07-06"
   },
   {
    "id": "498fe88639cb",
@@ -3356,6 +3824,71 @@
    "found": "2026-07-03"
   },
   {
+   "id": "446e9d92b7e9",
+   "company": "Shield AI",
+   "name": "Erik",
+   "title": "Director, Sales and Revenue Operations",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "HM",
+   "score": 3,
+   "why": "Sales RevOps director could influence AE hiring or provide intel on how Shield AI structures its sales motion.",
+   "warm_angle": "Tyler's RevOps experience building enterprise AI sales processes is a direct bridge to ops-side conversations.",
+   "found": "2026-07-06"
+  },
+  {
+   "id": "accb78f49466",
+   "company": "Shield AI",
+   "name": "Gavin",
+   "title": "Director - Revenue and Sales Operations, Global",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "HM",
+   "score": 3,
+   "why": "Global RevOps Director shapes sales process and tooling; useful for intel and could flag Tyler to hiring managers.",
+   "warm_angle": "Tyler's hands-on experience deploying Claude Code and MCP-governed retrieval is directly relevant to a RevOps leader evaluating AI sales tools.",
+   "found": "2026-07-06"
+  },
+  {
+   "id": "a0dcf540789c",
+   "company": "Shield AI",
+   "name": "Paul",
+   "title": "Business Development Account Executive",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 3,
+   "why": "BD AE can provide ground-level intel on sales cycle, deal structure, and what backgrounds break through hiring.",
+   "warm_angle": "Tyler's experience navigating the buyer side of enterprise AI vendor evaluations is a credible reason to ask how Shield AI handles those same dynamics from the sell side.",
+   "found": "2026-07-06"
+  },
+  {
+   "id": "b3e62e0b613e",
+   "company": "Shield AI",
+   "name": "Katie",
+   "title": "Talent Acquisition Specialist",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "RC",
+   "score": 3,
+   "why": "Talent Acquisition Specialist is the most direct path to getting into the ATS and flagged for open AE roles.",
+   "warm_angle": "Tyler can lead with a specific open role or function and reference his enterprise AI governance background as a differentiator for Shield AI's software sales motion.",
+   "found": "2026-07-06"
+  },
+  {
+   "id": "6453b02d165b",
+   "company": "Shield AI",
+   "name": "Miles",
+   "title": "Talent Acquisition Specialist",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "RC",
+   "score": 3,
+   "why": "Second TA Specialist increases odds of routing to the right recruiter covering sales roles.",
+   "warm_angle": "Same angle as Katie \u2014 Tyler's buyer-side AI deployment story is unusually specific and memorable for a recruiter screening GTM candidates.",
+   "found": "2026-07-06"
+  },
+  {
    "id": "82fd4848c436",
    "company": "Sierra",
    "name": "Elliot",
@@ -3380,6 +3913,32 @@
    "why": "Enterprise AE can share ground-level intel on hiring pace and team culture at Sierra.",
    "warm_angle": "Shared enterprise AI sales motion \u2014 Tyler's hands-on Claude/API experience is a credible conversation starter with a peer seller.",
    "found": "2026-07-02"
+  },
+  {
+   "id": "4dfe4268a4ae",
+   "company": "Sierra",
+   "name": "Aoife",
+   "title": "Enterprise Account Executive",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 3,
+   "why": "Enterprise AE can share candid intel on Sierra's sales cycle, deal size, vertical focus, and what profile leadership hires for AE roles.",
+   "warm_angle": "Tyler builds hands-on with Claude/APIs and has run the buyer's procurement side of AI \u2014 credible peer conversation starter with a practicing enterprise seller.",
+   "found": "2026-07-06"
+  },
+  {
+   "id": "7f1461889f67",
+   "company": "Sierra",
+   "name": "Harry",
+   "title": "Enterprise Account Executive",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 3,
+   "why": "Second Enterprise AE provides a cross-check on team culture, quota attainability, and whether Chicago-based or remote AE roles exist.",
+   "warm_angle": "Same Claude/MCP hands-on angle; Tyler can speak seller-to-seller about navigating enterprise AI security reviews from the buyer side.",
+   "found": "2026-07-06"
   },
   {
    "id": "92a77f80c722",
@@ -3458,6 +4017,32 @@
    "why": "In-house recruiter is a standard pipeline contact for flagging open AE roles and getting a resume into the process.",
    "warm_angle": "Tyler can reference hands-on Claude/API build experience plus financial services vertical depth as differentiators worth surfacing to hiring teams.",
    "found": "2026-07-03"
+  },
+  {
+   "id": "3baf8af28d07",
+   "company": "Waymo",
+   "name": "Thomas",
+   "title": "Talent Acquisition",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "RC",
+   "score": 3,
+   "why": "General TA contact at Waymo; can surface open GTM/AE roles and route Tyler's profile to the right hiring manager.",
+   "warm_angle": "",
+   "found": "2026-07-06"
+  },
+  {
+   "id": "6663f14b8cbc",
+   "company": "Waymo",
+   "name": "Melinda",
+   "title": "Talent Acquisition",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "RC",
+   "score": 3,
+   "why": "Second TA contact provides a parallel path into Waymo recruiting; useful if Thomas is unresponsive.",
+   "warm_angle": "",
+   "found": "2026-07-06"
   },
   {
    "id": "6a0109938dd5",
@@ -3616,6 +4201,71 @@
    "found": "2026-07-02"
   },
   {
+   "id": "fa86d97a69b2",
+   "company": "xAI / SpaceX",
+   "name": "Mark",
+   "title": "Senior Manager Talent Acquisition",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "RC",
+   "score": 3,
+   "why": "Sr. Talent Acquisition manager at xAI is the most direct path to surfacing open GTM/AE roles and getting into the pipeline.",
+   "warm_angle": "Tyler's rare combo of hands-on Claude/API deployment and enterprise buyer experience is directly relevant pitch to a TA leader screening GTM candidates.",
+   "found": "2026-07-06"
+  },
+  {
+   "id": "639b39800b13",
+   "company": "Anduril",
+   "name": "Mdrubel",
+   "title": "Account Executive",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 2,
+   "why": "Peer-level intel on what the AE motion looks like at Anduril; limited leverage but useful for ground-truth on quota, process, culture.",
+   "warm_angle": "",
+   "found": "2026-07-06"
+  },
+  {
+   "id": "0297e906998d",
+   "company": "Anduril",
+   "name": "Rew",
+   "title": "Talent Acquisition Specialist",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "RC",
+   "score": 2,
+   "why": "Specialist title suggests more junior TA; lower likelihood of owning senior GTM searches but can route internally.",
+   "warm_angle": "",
+   "found": "2026-07-06"
+  },
+  {
+   "id": "85eb6db9e6f8",
+   "company": "Applied Intuition",
+   "name": "Kenji",
+   "title": "Head of Sales, APAC - Applied Intuition / Executive Officer - Applied Intuition G.K.",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "HM",
+   "score": 2,
+   "why": "APAC-focused sales head; lower relevance given Tyler is Chicago-based and targeting U.S. enterprise/defense.",
+   "warm_angle": "",
+   "found": "2026-07-06"
+  },
+  {
+   "id": "10cf93406d7e",
+   "company": "Applied Intuition",
+   "name": "Andrey",
+   "title": "Recruiting",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "RC",
+   "score": 2,
+   "why": "Third recruiter; diminishing returns to contacting all three\u2014use as fallback only.",
+   "warm_angle": "",
+   "found": "2026-07-06"
+  },
+  {
    "id": "cce91488fef2",
    "company": "CoreWeave",
    "name": "Brandon",
@@ -3653,6 +4303,19 @@
    "why": "International-focused recruiter; lower relevance unless Decagon has US roles under his purview.",
    "warm_angle": "",
    "found": "2026-07-02"
+  },
+  {
+   "id": "abc2afe71ec9",
+   "company": "Figure AI",
+   "name": "Robert",
+   "title": "Talent Acquisition",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "RC",
+   "score": 2,
+   "why": "Basic recruiter contact at Figure AI, but minimal profile info makes it hard to assess fit or relevance to GTM roles",
+   "warm_angle": "Tyler's rare combo of hands-on humanoid/AI deployment context plus enterprise GTM pivot could stand out, but Figure AI's robotics focus is a weak match for his HR/financial services strengths",
+   "found": "2026-07-06"
   },
   {
    "id": "92ae23157363",
@@ -3707,6 +4370,19 @@
    "found": "2026-07-02"
   },
   {
+   "id": "95843a1ffa7e",
+   "company": "OpenAI",
+   "name": "Satya",
+   "title": "Head of Go to Market, Australia & New Zealand",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "HM",
+   "score": 2,
+   "why": "Regional GTM head for ANZ \u2014 geographically misaligned with Tyler's Chicago/US base, limiting direct hiring relevance.",
+   "warm_angle": "",
+   "found": "2026-07-06"
+  },
+  {
    "id": "66ca1a6f22b8",
    "company": "Rogo",
    "name": "Romit",
@@ -3731,6 +4407,71 @@
    "why": "Tech talent sourcer at Scale AI could surface open GTM/AE roles, but limited influence over hiring decisions.",
    "warm_angle": "Tyler's rare combo of hands-on Claude/API builds plus enterprise buyer experience is a specific pitch for why he stands out in a tech-savvy sales pool.",
    "found": "2026-07-03"
+  },
+  {
+   "id": "91b06028470a",
+   "company": "Shield AI",
+   "name": "Bill",
+   "title": "Director - Foreign Military Sales (FMS)",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "HM",
+   "score": 2,
+   "why": "FMS Director is niche defense-specific; Tyler lacks a security clearance or defense sales background making this a weak fit.",
+   "warm_angle": "",
+   "found": "2026-07-06"
+  },
+  {
+   "id": "d655197042b0",
+   "company": "Sierra",
+   "name": "Perry",
+   "title": "Enterprise Account Executive",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 2,
+   "why": "Third AE is redundant given two others already targeted; only worth contacting if the first two don't respond.",
+   "warm_angle": "",
+   "found": "2026-07-06"
+  },
+  {
+   "id": "5b5b36536584",
+   "company": "Waymo",
+   "name": "Harish",
+   "title": "Head of Supply Chain and GTM Systems",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "HM",
+   "score": 2,
+   "why": "GTM Systems head at Waymo is adjacent but supply chain focus makes it an unlikely hiring manager for a sales/AE role; worth a long-shot note if no better contacts surface.",
+   "warm_angle": "Both operate at the intersection of enterprise systems and go-to-market build-out; Tyler's ops-heavy transformation background could resonate.",
+   "found": "2026-07-06"
+  },
+  {
+   "id": "b50c0ec28ecc",
+   "company": "xAI / SpaceX",
+   "name": "Patrick",
+   "title": "Head of Ads GTM - Japan & Asia Pacific",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "HM",
+   "score": 2,
+   "why": "GTM leadership role but APAC/Ads focus is a poor fit for Tyler's enterprise AI/HR vertical strengths and Chicago base.",
+   "warm_angle": "",
+   "found": "2026-07-06"
+  },
+  {
+   "id": "a5f67f86ab73",
+   "company": "xAI / SpaceX",
+   "name": "Sithsarey",
+   "title": "Account Executive",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 2,
+   "why": "Generic AE title with no enterprise AI signal; limited intel value without more context on book of business.",
+   "warm_angle": "",
+   "found": "2026-07-06"
   }
  ]
 }
