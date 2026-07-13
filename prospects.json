@@ -1,5 +1,5 @@
 {
- "generated": "2026-07-06T14:25:16+00:00",
+ "generated": "2026-07-13T13:16:39+00:00",
  "prospects": [
   {
    "id": "a1d34efb29b7",
@@ -288,6 +288,19 @@
    "found": "2026-07-02"
   },
   {
+   "id": "c460b26dcc7f",
+   "company": "Glean",
+   "name": "Matthew",
+   "title": "Sr. GTM Recruiter",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "RC",
+   "score": 5,
+   "why": "GTM-specific recruiter is the highest-leverage first contact for surfacing open AE roles and getting into the pipeline quickly",
+   "warm_angle": "Tyler can lead with his Morningstar AI governance and Claude deployment work as proof he understands Glean's exact buyer, making the recruiter's job easy",
+   "found": "2026-07-13"
+  },
+  {
    "id": "f78f45444c9c",
    "company": "Google (DeepMind / Cloud AI)",
    "name": "Christine",
@@ -364,6 +377,19 @@
    "why": "Founding Recruiter has deepest context on Harvey's hiring philosophy, culture, and open roles; highest-value recruiter contact",
    "warm_angle": "Founding-stage recruiter will appreciate a candidate who built internally with Claude/APIs and sat on AI governance \u2014 not a typical AE profile",
    "found": "2026-07-02"
+  },
+  {
+   "id": "7d076127d485",
+   "company": "Harvey",
+   "name": "Rob",
+   "title": "VP of Sales",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "HM",
+   "score": 5,
+   "why": "VP of Sales is the direct hiring authority for enterprise AE roles; owns headcount and would immediately grasp Tyler's 'buyer who became seller' positioning.",
+   "warm_angle": "Tyler has run the enterprise AI vendor evaluation and procurement cycle from the buyer side \u2014 he can speak to exactly what Harvey's AEs face when selling into legal ops and GC offices.",
+   "found": "2026-07-13"
   },
   {
    "id": "b612b7da9bb2",
@@ -806,6 +832,19 @@
    "why": "Senior GTM Recruiter is the most targeted TA contact for an enterprise AE search; likely owns this req",
    "warm_angle": "Tyler's HR/talent tech background gives him instant credibility with a talent acquisition professional\u2014speaks their language before the first call",
    "found": "2026-07-03"
+  },
+  {
+   "id": "ff56de8a4bbd",
+   "company": "Writer",
+   "name": "Glenn",
+   "title": "Area Vice President of Sales",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "HM",
+   "score": 5,
+   "why": "AVP of Sales is a direct hiring manager for enterprise AE roles and owns regional quota and headcount decisions.",
+   "warm_angle": "Tyler's enterprise AI buyer credibility (ran vendor eval, security review, procurement) is a rare angle for a sales leader tired of reps who don't understand the buy side.",
+   "found": "2026-07-13"
   },
   {
    "id": "e3270be47b55",
@@ -1289,6 +1328,32 @@
    "found": "2026-07-03"
   },
   {
+   "id": "d7fa90c8a8e7",
+   "company": "EliseAI",
+   "name": "Anthony",
+   "title": "Director of Sales, Healthcare",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "HM",
+   "score": 4,
+   "why": "Director of Sales, Healthcare is the closest available hiring manager for an enterprise AE role in a defined vertical; EliseAI has strong healthcare presence.",
+   "warm_angle": "Tyler's EY/Kincentric consulting background and enterprise transformation experience maps well to the complex, multi-stakeholder healthcare sales cycles EliseAI navigates.",
+   "found": "2026-07-13"
+  },
+  {
+   "id": "113f7d496ef3",
+   "company": "EliseAI",
+   "name": "Mike",
+   "title": "Enterprise Account Executive",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 4,
+   "why": "Enterprise AE peer conversation to understand quota structure, deal cycles, and whether EliseAI is actively backfilling or expanding AE headcount.",
+   "warm_angle": "Peer-to-peer intel ask: Tyler can frame himself as a serious enterprise AI buyer-turned-seller evaluating EliseAI as a landing spot.",
+   "found": "2026-07-13"
+  },
+  {
    "id": "b22483f7e6ac",
    "company": "Figma",
    "name": "Christina",
@@ -1378,6 +1443,32 @@
    "why": "Second GTM Recruiter worth contacting in parallel to maximize odds of reaching the active req owner.",
    "warm_angle": "Same positioning hook; mention Morningstar as a Glean ICP-adjacent financial services account to show immediate vertical relevance.",
    "found": "2026-07-02"
+  },
+  {
+   "id": "43527b1d2c5e",
+   "company": "Glean",
+   "name": "Lauren",
+   "title": "Head of Enterprise Sales West",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "HM",
+   "score": 4,
+   "why": "Head of Enterprise Sales West is a direct hiring manager for enterprise AE roles and a key decision-maker",
+   "warm_angle": "Tyler's buyer-side enterprise AI sales cycle experience at Morningstar is a credible pitch to someone who sells into exactly that buyer profile",
+   "found": "2026-07-13"
+  },
+  {
+   "id": "f8ed3139f55b",
+   "company": "Glean",
+   "name": "Ross",
+   "title": "Enterprise Account Executive",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 4,
+   "why": "Enterprise AE peer can share intel on team culture, quota structure, open headcount, and what resonates in interviews",
+   "warm_angle": "Tyler can open with genuine curiosity about selling Glean into financial services and HR tech verticals where he has deep domain knowledge",
+   "found": "2026-07-13"
   },
   {
    "id": "a6aabf17b627",
@@ -1497,6 +1588,32 @@
    "found": "2026-07-02"
   },
   {
+   "id": "e8b2a457389d",
+   "company": "Harvey",
+   "name": "Bradon",
+   "title": "Enterprise Account Executive",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 4,
+   "why": "Enterprise AE peer \u2014 best source for intel on Harvey's sales motion, territory structure, deal cycles, and whether headcount is opening.",
+   "warm_angle": "Tyler can open with genuine peer curiosity: he's deploying AI governance at Morningstar and wants to understand how Harvey navigates security review and stakeholder buy-in on the legal side.",
+   "found": "2026-07-13"
+  },
+  {
+   "id": "17184cd4adf0",
+   "company": "Harvey",
+   "name": "Dennis",
+   "title": "Senior Business Recruiter G&a/gtm",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "RC",
+   "score": 4,
+   "why": "Recruiter explicitly covers GTM roles; fastest path to being in the active pipeline if a req is open or about to open.",
+   "warm_angle": "Tyler's profile is unusually differentiated for legal-vertical AI \u2014 financial services governance experience and hands-on Claude/API work make him a credible cross-vertical enterprise seller Harvey can point to with sophisticated buyers.",
+   "found": "2026-07-13"
+  },
+  {
    "id": "a6b8d854d5c5",
    "company": "Hebbia",
    "name": "Adi",
@@ -1508,6 +1625,19 @@
    "why": "RVP Sales likely owns a regional or vertical book and may have headcount; secondary HM target.",
    "warm_angle": "Same buyer-side credibility angle; Tyler can speak to what moves enterprise deals at firms like Morningstar.",
    "found": "2026-07-03"
+  },
+  {
+   "id": "6bdd535df74c",
+   "company": "Hebbia",
+   "name": "Ishika",
+   "title": "Recruiter",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "RC",
+   "score": 4,
+   "why": "Direct path to open AE roles and internal hiring context; recruiters at early-stage AI cos often have real influence on candidate slates.",
+   "warm_angle": "Tyler's rare 'buyer-turned-seller' profile (ran vendor eval and security review at Morningstar) is a concrete differentiator worth packaging for Ishika to carry internally.",
+   "found": "2026-07-13"
   },
   {
    "id": "9ee46f3e85ca",
@@ -1651,6 +1781,19 @@
    "why": "Talent Acquisition Partner is a direct pipeline contact who can surface open AE reqs and advance Tyler's application internally.",
    "warm_angle": "Tyler's rare combo of hands-on Claude/API builds plus enterprise buyer experience is a concrete differentiator to hand a recruiter who needs to justify a non-traditional AE profile.",
    "found": "2026-07-03"
+  },
+  {
+   "id": "903993981cdf",
+   "company": "Legora",
+   "name": "Kathryn",
+   "title": "GTM Recruiter (via Talentful)",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "RC",
+   "score": 4,
+   "why": "Dedicated GTM recruiter actively sourcing for Legora roles; most direct path to getting Tyler into the hiring funnel",
+   "warm_angle": "Tyler's rare profile as a literal enterprise AI buyer (ran vendor eval, security review, procurement) maps precisely to what legal AI companies need in enterprise AEs targeting law firm and in-house counsel buyers",
+   "found": "2026-07-13"
   },
   {
    "id": "c5df6cecb3d2",
@@ -2173,6 +2316,32 @@
    "found": "2026-07-03"
   },
   {
+   "id": "77c30ddcfa30",
+   "company": "Writer",
+   "name": "Conor",
+   "title": "Enterprise Account Executive",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 4,
+   "why": "Enterprise AE peer who can share territory structure, deal cycles, ICP, and whether headcount is opening.",
+   "warm_angle": "Tyler sells into the exact buyer persona Conor calls on (HR/finance enterprise, AI governance stakeholders) \u2014 peer credibility makes this a genuine intel conversation.",
+   "found": "2026-07-13"
+  },
+  {
+   "id": "6299fdda02d5",
+   "company": "Writer",
+   "name": "Miles",
+   "title": "Talent Acquisition",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "RC",
+   "score": 4,
+   "why": "Talent Acquisition is the direct pipeline to open GTM reqs and can flag roles before they post publicly.",
+   "warm_angle": "Tyler's Prosci cert, AI governance committee seat, and hands-on Claude/API work make him an unusually credentialed candidate for an AI-native company's enterprise sales bench.",
+   "found": "2026-07-13"
+  },
+  {
    "id": "24b6e41f2bed",
    "company": "xAI / SpaceX",
    "name": "Vadim",
@@ -2223,6 +2392,19 @@
    "why": "Internal recruiter can flag open AE roles and move Tyler into the pipeline; useful if HM outreach goes cold.",
    "warm_angle": "Tyler's hands-on Claude/API build experience plus enterprise buyer credibility is a rare combo Abridge recruiters can position easily to hiring managers.",
    "found": "2026-07-03"
+  },
+  {
+   "id": "2e4edeacad38",
+   "company": "Abridge",
+   "name": "Christina",
+   "title": "Sales Director",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "HM",
+   "score": 3,
+   "why": "Sales Director at Abridge is a plausible hiring manager or close peer to one; likely owns or influences AE hiring in the healthcare AI vertical.",
+   "warm_angle": "Tyler's buyer-side experience running enterprise AI vendor evaluations maps directly to what Abridge sells into\u2014he can speak the language of health system procurement and governance pain points.",
+   "found": "2026-07-13"
   },
   {
    "id": "c446802df4ed",
@@ -2862,6 +3044,45 @@
    "found": "2026-07-02"
   },
   {
+   "id": "6b56df4c8e64",
+   "company": "Decagon",
+   "name": "Alex",
+   "title": "Enterprise Account Executive",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 3,
+   "why": "Peer-level intel source on Decagon's enterprise sales motion, deal cycles, and ICP\u2014useful for understanding what the AE role actually looks like day-to-day",
+   "warm_angle": "Tyler can open as a practitioner who has sat on the buy side of AI agent deployments, making the conversation feel like peer knowledge-sharing rather than a cold ask",
+   "found": "2026-07-13"
+  },
+  {
+   "id": "aebb5373f596",
+   "company": "Decagon",
+   "name": "Jake",
+   "title": "Enterprise Account Executive",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 3,
+   "why": "Same peer intel value as Alex\u2014can provide inside view on quota structure, territory, and how Decagon positions against competitors",
+   "warm_angle": "Tyler's hands-on Claude/MCP deployment experience gives him credibility to speak AE-to-AE about the technical complexity of enterprise AI sales conversations",
+   "found": "2026-07-13"
+  },
+  {
+   "id": "8946c8db2221",
+   "company": "Decagon",
+   "name": "Joseph",
+   "title": "Enterprise Account Executive",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 3,
+   "why": "Third data point on the AE experience at Decagon; triangulating across multiple AEs sharpens Tyler's picture of team culture and ramp expectations",
+   "warm_angle": "Tyler's financial services and HR vertical experience may overlap with Joseph's book of business, creating a natural hook around shared customer types",
+   "found": "2026-07-13"
+  },
+  {
    "id": "453aa5ef1386",
    "company": "ElevenLabs",
    "name": "Ricardo",
@@ -2912,6 +3133,58 @@
    "why": "Talent Acquisition Manager is the right recruiter-side contact to surface Tyler's application or express direct interest in enterprise AE roles.",
    "warm_angle": "Tyler's governance committee and procurement background maps cleanly to EliseAI's enterprise buyer profile \u2014 easy framing for a recruiter pitch.",
    "found": "2026-07-03"
+  },
+  {
+   "id": "674c191392ee",
+   "company": "EliseAI",
+   "name": "Frankie",
+   "title": "Director, Sales Development",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "HM",
+   "score": 3,
+   "why": "SDR Director could influence AE hiring or provide intel on sales org structure, but not a direct AE hiring decision-maker.",
+   "warm_angle": "Tyler's enterprise AI deployment experience at Morningstar gives him credibility on what SDR teams need to know to sell AI governance-heavy deals.",
+   "found": "2026-07-13"
+  },
+  {
+   "id": "4d7aa8074073",
+   "company": "EliseAI",
+   "name": "Matthew",
+   "title": "Director, Sales Development",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "HM",
+   "score": 3,
+   "why": "Second SDR Director suggests growing sales org; useful for org mapping and referral to AE hiring managers.",
+   "warm_angle": "Same enterprise AI buyer-side angle; Tyler can speak to what resonates in outbound for complex AI sales cycles.",
+   "found": "2026-07-13"
+  },
+  {
+   "id": "4343f4b3ad8d",
+   "company": "EliseAI",
+   "name": "Andrew",
+   "title": "Enterprise Account Executive",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 3,
+   "why": "Second Enterprise AE useful for corroborating intel from Mike on comp, territory, and culture.",
+   "warm_angle": "Same buyer-turned-seller positioning; Tyler can compare notes on what the enterprise sales motion actually looks like from the field.",
+   "found": "2026-07-13"
+  },
+  {
+   "id": "fbd70e8a8fc2",
+   "company": "EliseAI",
+   "name": "Natasha",
+   "title": "Talent Acquisition Manager",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "RC",
+   "score": 3,
+   "why": "Talent Acquisition Manager can surface open AE roles and flag Tyler's profile internally, especially if no CRO/VP Sales was found.",
+   "warm_angle": "Tyler's rare combo of hands-on Claude/API experience plus enterprise buyer credibility is a concrete differentiator worth naming directly to TA.",
+   "found": "2026-07-13"
   },
   {
    "id": "26e44ff00f89",
@@ -3031,6 +3304,19 @@
    "found": "2026-07-02"
   },
   {
+   "id": "fbd25a3f2bdb",
+   "company": "Glean",
+   "name": "Dillon",
+   "title": "Enterprise Account Executive",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 3,
+   "why": "Second enterprise AE provides corroborating intel if Ross is unresponsive; lower priority than one strong AE contact",
+   "warm_angle": "Same buyer-perspective angle as Ross; useful backup if Dillon covers a different segment or vertical",
+   "found": "2026-07-13"
+  },
+  {
    "id": "244080c3c1c2",
    "company": "Google (DeepMind / Cloud AI)",
    "name": "Jan",
@@ -3122,6 +3408,19 @@
    "found": "2026-07-02"
   },
   {
+   "id": "019b56bcc2fd",
+   "company": "Harvey",
+   "name": "Colin",
+   "title": "Enterprise Account Executive",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 3,
+   "why": "Second enterprise AE for intel redundancy; useful if Bradon is unresponsive.",
+   "warm_angle": "Same buyer-side credibility angle \u2014 Tyler understands the enterprise procurement pain Harvey's AEs live with daily.",
+   "found": "2026-07-13"
+  },
+  {
    "id": "0a4c36708a03",
    "company": "Hebbia",
    "name": "Will",
@@ -3159,6 +3458,45 @@
    "why": "Staff Recruiter likely owns GTM requisitions; useful for getting into the formal pipeline in parallel with HM outreach.",
    "warm_angle": "Tyler's Prosci cert, AI governance committee seat, and hands-on Claude/API builds make him an unusually differentiated AE candidate to flag to hiring managers.",
    "found": "2026-07-03"
+  },
+  {
+   "id": "c27aa01a2838",
+   "company": "Hebbia",
+   "name": "Kevin",
+   "title": "Enterprise Account Executive",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 3,
+   "why": "Peer intel on Hebbia's enterprise sales motion, deal cycles, and what buyer profiles resonate in financial services vertical.",
+   "warm_angle": "Tyler sells to the same buyers Hebbia targets; can speak credibly about the enterprise AI evaluation process from the buy side at a public findata firm.",
+   "found": "2026-07-13"
+  },
+  {
+   "id": "cf174c7ec79f",
+   "company": "Hebbia",
+   "name": "Mark",
+   "title": "Enterprise Account Executive",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 3,
+   "why": "Same peer intel value as Kevin; one of these AE conversations is likely sufficient, two gives triangulation.",
+   "warm_angle": "Same Morningstar/financial services buyer-side angle; Tyler's hands-on Claude/API experience is a natural credibility hook with a peer seller.",
+   "found": "2026-07-13"
+  },
+  {
+   "id": "b5121f899eb6",
+   "company": "Hebbia",
+   "name": "Elizabeth",
+   "title": "Enterprise Account Executive",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 3,
+   "why": "Third AE contact at Hebbia; useful if Kevin or Mark don't respond, but avoid pinging all three simultaneously.",
+   "warm_angle": "If Elizabeth covers financial services accounts specifically, Tyler's Morningstar governance and procurement experience is a direct conversation starter.",
+   "found": "2026-07-13"
   },
   {
    "id": "0230971b8ee8",
@@ -3694,6 +4032,19 @@
    "found": "2026-07-02"
   },
   {
+   "id": "46cdd24ee2d2",
+   "company": "Perplexity",
+   "name": "Ian",
+   "title": "Enterprise Account Executive",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 3,
+   "why": "Peer-level intel on Perplexity's enterprise sales motion, ICP, and what buyer profiles resonate with their team",
+   "warm_angle": "Tyler's hands-on experience deploying Perplexity-adjacent AI search in enterprise (MCP-governed retrieval) makes for a credible peer conversation about the enterprise buyer's perspective",
+   "found": "2026-07-13"
+  },
+  {
    "id": "6a121d78a853",
    "company": "Pinecone",
    "name": "Roderick",
@@ -3731,6 +4082,19 @@
    "why": "Enterprise AE can share intel on sales cycle, ICP fit, quota structure, and what leadership values in candidates.",
    "warm_angle": "Peer-level conversation: Tyler has hands-on Claude/API and MCP deployment experience that signals genuine technical credibility, a natural icebreaker with a fellow enterprise seller.",
    "found": "2026-07-03"
+  },
+  {
+   "id": "9b00fa70d961",
+   "company": "Rogo",
+   "name": "Dean",
+   "title": "Strategic Account Executive",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 3,
+   "why": "Strategic AE at Rogo can share ground-level intel on ICP, sales cycle, and what enterprise financial services buyers actually care about\u2014directly relevant to Tyler's positioning.",
+   "warm_angle": "Tyler has run the buyer side of enterprise AI deals in financial services; peer conversation framed as 'what do your champions look like internally' is credible and mutual.",
+   "found": "2026-07-13"
   },
   {
    "id": "1cbe1641282a",
@@ -4175,6 +4539,19 @@
    "found": "2026-07-03"
   },
   {
+   "id": "d4634041d1a6",
+   "company": "Writer",
+   "name": "Chelsea",
+   "title": "Enterprise Account Executive",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 3,
+   "why": "Second enterprise AE for intel on team culture, comp structure, and open roles; lower priority than one strong AE contact.",
+   "warm_angle": "Same buyer-side angle as with Conor; reaching both risks redundancy so prioritize Conor first.",
+   "found": "2026-07-13"
+  },
+  {
    "id": "c9211a7e4c38",
    "company": "xAI / SpaceX",
    "name": "Matthew",
@@ -4331,6 +4708,32 @@
    "found": "2026-07-03"
   },
   {
+   "id": "c314eee7940d",
+   "company": "Legora",
+   "name": "Lachlan",
+   "title": "Head of Australia & New Zealand | APJ Go-To-Market Lead",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "HM",
+   "score": 2,
+   "why": "APJ GTM lead, but Tyler is Chicago-based and Legora's ANZ/APJ focus is a geographic mismatch for his target market",
+   "warm_angle": "Both navigating enterprise AI GTM at vertical-focused legal AI companies; Tyler's buyer-side enterprise AI governance experience is a credible opener even across regions",
+   "found": "2026-07-13"
+  },
+  {
+   "id": "5b8cd006f30b",
+   "company": "Mercor",
+   "name": "Jasper",
+   "title": "Talent Acquisition Manager (Contract)",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "RC",
+   "score": 2,
+   "why": "Contract TA manager may have limited visibility into GTM headcount decisions and likely won't own AE requisitions at a small AI startup.",
+   "warm_angle": "Mercor is a talent-tech company\u2014Tyler's HR/workforce planning background gives him credible common ground on the product side.",
+   "found": "2026-07-13"
+  },
+  {
    "id": "b3deb8c86bf9",
    "company": "NVIDIA",
    "name": "Vince",
@@ -4396,6 +4799,19 @@
    "found": "2026-07-03"
   },
   {
+   "id": "dce1a9eca000",
+   "company": "Rogo",
+   "name": "Ryan",
+   "title": "Enterprise Account Executive - APAC",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "AE",
+   "score": 2,
+   "why": "APAC-focused AE has limited overlap with Tyler's Chicago/US enterprise angle but can still speak to Rogo's sales motion and deal structure.",
+   "warm_angle": "Tyler's Morningstar background (global financial data) gives a natural opener since Morningstar has APAC operations and is exactly Rogo's buyer profile.",
+   "found": "2026-07-13"
+  },
+  {
    "id": "ec370c947865",
    "company": "Scale AI",
    "name": "Gil",
@@ -4433,6 +4849,19 @@
    "why": "Third AE is redundant given two others already targeted; only worth contacting if the first two don't respond.",
    "warm_angle": "",
    "found": "2026-07-06"
+  },
+  {
+   "id": "dd951e9da46f",
+   "company": "Suno",
+   "name": "Randall",
+   "title": "Talent Acquisition",
+   "linkedin_url": "",
+   "location": "",
+   "persona": "RC",
+   "score": 2,
+   "why": "Talent acquisition contact at Suno could surface any GTM openings but Suno is a consumer music AI startup with limited enterprise sales motion, reducing fit",
+   "warm_angle": "Tyler's hands-on Claude/API experience and buyer-side enterprise AI credibility is a rare profile worth flagging if any commercial roles open",
+   "found": "2026-07-13"
   },
   {
    "id": "5b5b36536584",
