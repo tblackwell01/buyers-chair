@@ -3,7 +3,7 @@
 A weekly agent that finds GTM people (hiring managers, enterprise AEs, and
 recruiters) at 50 target frontier AI and tech companies, scores each one
 against Tyler's positioning with Claude, and feeds them into the Buyer's
-Chair dashboard inbox for manual review and outreach.
+Chair dashboard inbox for manual review and outreach..
 
 **Data source is Apollo.io's licensed B2B database.** The agent never
 touches LinkedIn. All connection requests and messages are sent manually.
